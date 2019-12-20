@@ -1,6 +1,6 @@
 <template>
 	<div class="component">
-		<h1>About.vue</h1>
+		<h2>About.vue</h2>
 	</div>
 </template>
 
@@ -9,3 +9,10 @@ export default {
   name: 'About'
 }
 </script>
+
+<style scoped>
+	.component {
+		display: flex;
+		justify-content: center;
+	}
+</style>

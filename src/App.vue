@@ -17,14 +17,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 #app {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: #2c3e50;
-	margin-top: 60px;
+	margin-top: 5%;
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
 	grid-template-rows: 20% 20% 20% 20% 20%;
@@ -42,7 +43,7 @@ a {
 	grid-row-end: 1;
 }
 
-.component {
+#app div {
 	grid-row-start: 3;
 	grid-row-end: 5;
 	grid-column-start: 1;
