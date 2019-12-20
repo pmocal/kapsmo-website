@@ -5,10 +5,14 @@ import App from './App.vue'
 Vue.config.productionTip = false
 Vue.use(VueRouter);
 
-import Pics from './components/Pics.vue'
+import Travel from './components/Travel.vue'
+import Work from './components/Work.vue'
+import About from './components/About.vue'
 
 const routes = [
-	{ path: '/pics', component: Pics }
+	{ path: '/travel', component: Travel },
+	{ path: '/work', component: Work },
+	{ path: '/about', component: About }
 ]
 
 const router = new VueRouter({

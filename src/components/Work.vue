@@ -1,11 +1,11 @@
 <template>
-	<div id="app">
-		<h1>Pics.vue</h1>
+	<div class="component">
+		<h1>Work.vue</h1>
 	</div>
 </template>
 
 <script>
 export default {
-  name: 'Pics'
+  name: 'Work'
 }
 </script>
