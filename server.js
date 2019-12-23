@@ -8,4 +8,8 @@ const app = express()
 // bind the request to an absolute path or relative to the CWD
 app.use(express.static('dist'))
 // start the server
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'dist/index.html'));
+});
+
+app.listen(port);
