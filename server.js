@@ -1,5 +1,6 @@
 // optional: allow environment to specify port
 const port = process.env.PORT || 8080
+const path = require('path');
 
 // wire up the module
 const express = require('express') 

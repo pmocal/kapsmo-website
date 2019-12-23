@@ -1,9 +1,7 @@
 <template>
 	<div class="component">
-		<h2>Travel.vue</h2>
-		<div class="content">
-			<img src="/paris.jpg">
-		</div>
+		<h2>Travel</h2>
+		<img src="/paris.jpg">
 	</div>
 </template>
 
@@ -14,12 +12,10 @@ export default {
 </script>
 
 <style scoped>
-	.content {
-		display: flex;
-		justify-content: center;
-	}
-	img {
-		width: 30%;
-		height: 30%;
-	}
+.component {
+	grid-row-start: 2;
+	grid-row-end: 5;
+	grid-column-start: 1;
+	grid-column-end: 6;
+}
 </style>

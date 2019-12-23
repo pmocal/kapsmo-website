@@ -1,6 +1,6 @@
 <template>
 	<div class="component">
-		<h2>About.vue</h2>
+		<h2>About</h2>
 	</div>
 </template>
 
@@ -11,8 +11,10 @@ export default {
 </script>
 
 <style scoped>
-	.component {
-		display: flex;
-		justify-content: center;
-	}
+.component {
+	grid-row-start: 2;
+	grid-row-end: 5;
+	grid-column-start: 1;
+	grid-column-end: 6;
+}
 </style>
