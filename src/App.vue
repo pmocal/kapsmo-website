@@ -23,14 +23,19 @@ export default {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	padding-top: 5%;
+/*	text-align: center;
+*/	color: #2c3e50;
 	display: grid;
 	grid-template-columns: 20% 20% 20% 20% 20%;
 	grid-template-rows: 20% 20% 20% 20% 20%;
 	width: 100vw;
 	height: 100vh;
+}
+
+.app * {
+	padding: 1%;
+	display: flex;
+	justify-content: center;
 }
 
 h1 {
