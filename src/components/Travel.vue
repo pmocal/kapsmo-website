@@ -1,35 +1,30 @@
 <template>
-	<div class="component">
-		<h2>Travel</h2>
-		<img src="/paris.jpg">
-	</div>
+	<base-layout>
+		<template v-slot:header>
+
+		</template>
+		<template v-slot:title>
+			<h2>Travel</h2>
+		</template>
+		<template v-slot:picture>
+			<img src="/paris.jpg">
+		</template>
+	</base-layout>
 </template>
 
 <script>
-export default {
-  name: 'Travel'
-}
+	import BaseLayout from './BaseLayout.vue'
+	
+	export default {
+		name: 'Travel',
+		components: {
+			BaseLayout
+		}
+	}
 </script>
 
 <style scoped>
-.component {
-	grid-row-start: 2;
-	grid-row-end: 5;
-	grid-column-start: 1;
-	grid-column-end: 6;
-	display: grid;
-	grid-template-rows: 20% 80%;
-}
-
-.component h2 {
-	grid-row: 1;
-}
-
-.component img {
-	grid-row: 2;
-}
-
-img {
-	height: 80%;
-}
+	img {
+		height: 70%;
+	}
 </style>
