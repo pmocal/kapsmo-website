@@ -36,6 +36,7 @@ export default {
 	padding: 1%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 h1 {

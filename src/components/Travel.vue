@@ -17,5 +17,11 @@ export default {
 	grid-row-end: 5;
 	grid-column-start: 1;
 	grid-column-end: 6;
+	height: 80%;
+	width: 100%;
+}
+
+img {
+	height: 100%;
 }
 </style>
