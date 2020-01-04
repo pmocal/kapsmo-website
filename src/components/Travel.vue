@@ -17,11 +17,19 @@ export default {
 	grid-row-end: 5;
 	grid-column-start: 1;
 	grid-column-end: 6;
-	height: 80%;
-	width: 100%;
+	display: grid;
+	grid-template-rows: 20% 80%;
+}
+
+.component h2 {
+	grid-row: 1;
+}
+
+.component img {
+	grid-row: 2;
 }
 
 img {
-	height: 100%;
+	height: 80%;
 }
 </style>
