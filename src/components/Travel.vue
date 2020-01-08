@@ -25,6 +25,6 @@
 
 <style scoped>
 	img {
-		height: 70%;
+		width: 40%;
 	}
 </style>
