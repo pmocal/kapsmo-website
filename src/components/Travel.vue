@@ -8,6 +8,7 @@
 		</template>
 		<template v-slot:picture>
 			<img src="/paris.jpg">
+			<img src="/chennai.jpeg">
 		</template>
 	</base-layout>
 </template>
@@ -25,6 +26,7 @@
 
 <style scoped>
 	img {
-		width: 40%;
+		height: 40%;
+		width: 20%;
 	}
 </style>
