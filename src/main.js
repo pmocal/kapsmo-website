@@ -5,9 +5,9 @@ import App from './App.vue'
 Vue.config.productionTip = false
 Vue.use(VueRouter);
 
-import Travel from './components/Travel.vue'
-import Work from './components/Work.vue'
-import About from './components/About.vue'
+import Travel from './pages/Travel.vue'
+import Work from './pages/Work.vue'
+import About from './pages/About.vue'
 
 const routes = [
 	{ path: '/travel', component: Travel },

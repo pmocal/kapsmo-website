@@ -1,14 +1,11 @@
 <template>
 	<div class="container">
 		<header>
-			<slot name="header"></slot>
+			<slot name="title"></slot>
 		</header>
 		<main>
-			<slot name="title"></slot>
+			<slot name="main"></slot>
 		</main>
-		<footer>
-			<slot name="picture"></slot>
-		</footer>
 	</div>
 </template>
 
@@ -24,15 +21,16 @@
 		grid-row-end: 5;
 		grid-column-start: 1;
 		grid-column-end: 6;
-		display: grid;
-		grid-template-rows: 30% 70%;
+		align-items: normal;
+		justify-content: start;
+		width: 100%;
 	}
 
-	main {
+	header {
 		grid-row: 1;
 	}
 
-	footer {
+	main {
 		grid-row: 2;
 	}
 </style>

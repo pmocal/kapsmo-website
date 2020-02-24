@@ -1,12 +1,9 @@
 <template>
 	<base-layout>
-		<template v-slot:header>
-
-		</template>
 		<template v-slot:title>
 			<h2>Travel</h2>
 		</template>
-		<template v-slot:picture>
+		<template v-slot:main>
 			<img src="/paris.jpg">
 			<img src="/chennai.jpeg">
 		</template>
@@ -14,7 +11,7 @@
 </template>
 
 <script>
-	import BaseLayout from './BaseLayout.vue'
+	import BaseLayout from './../components/BaseLayout.vue'
 	
 	export default {
 		name: 'Travel',
