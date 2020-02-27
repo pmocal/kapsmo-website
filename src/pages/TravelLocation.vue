@@ -1,26 +1,18 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<h2>WORK</h2>
+			<h2>{{ $route.params.id }}</h2>
 		</template>
 		<template v-slot:main>
-			<ul>
-				<li>
-					<p>Daddykins</p>
-				</li>
-				<li>
-					<p>An English Made in India</p>
-				</li>
-			</ul>
 		</template>
 	</base-layout>
 </template>
 
 <script>
 	import BaseLayout from './../components/BaseLayout.vue'
-
+	
 	export default {
-		name: 'Work',
+		name: 'TravelLocation',
 		components: {
 			BaseLayout
 		}
@@ -28,5 +20,8 @@
 </script>
 
 <style scoped>
-
+	img {
+		height: 40%;
+		width: 20%;
+	}
 </style>

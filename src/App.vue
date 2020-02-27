@@ -1,6 +1,6 @@
 <template>
 	<div class="app">
-		<h1>Kalpana Mohan's Website</h1>
+		<h1><router-link to="/home">Kalpana Mohan's Website</router-link></h1>
 		<router-link to="/work">Work</router-link>
 		<router-link to="/travel">Travel</router-link>
 		<router-link to="/about">About</router-link>
@@ -39,6 +39,7 @@
 		grid-column-end: 3;
 		grid-row-start: 1;
 		grid-row-end: 2;
+		font-weight: bold;
 	}
 
 	a {

@@ -1,17 +1,10 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<h2>WORK</h2>
+			<h2>ARTICLE {{ $route.params.id }}</h2>
 		</template>
 		<template v-slot:main>
-			<ul>
-				<li>
-					<p>Daddykins</p>
-				</li>
-				<li>
-					<p>An English Made in India</p>
-				</li>
-			</ul>
+			<p>Article body goes here.</p>
 		</template>
 	</base-layout>
 </template>
@@ -20,7 +13,7 @@
 	import BaseLayout from './../components/BaseLayout.vue'
 
 	export default {
-		name: 'Work',
+		name: 'Article',
 		components: {
 			BaseLayout
 		}

@@ -1,11 +1,12 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<h2>Travel</h2>
+			<h2>TRAVEL</h2>
 		</template>
 		<template v-slot:main>
-			<img src="/paris.jpg">
-			<img src="/chennai.jpeg">
+			<router-link to="/location/paris"><img src="assets/paris.jpg"></router-link>
+			<router-link to="/location/chennai"><img src="assets/chennai.jpeg"></router-link>
+			<router-view></router-view>
 		</template>
 	</base-layout>
 </template>
@@ -25,5 +26,10 @@
 	img {
 		height: 40%;
 		width: 20%;
+	}
+
+	main {
+		display: flex;
+		justify-content: space-around;
 	}
 </style>
