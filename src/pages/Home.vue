@@ -31,7 +31,4 @@
 </script>
 
 <style scoped>
-	h2 {
-		font-family: 'Kumar One';
-	}
 </style>

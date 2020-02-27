@@ -34,11 +34,12 @@
 		text-align: left;
 		color: black;
 		line-height: normal;
-		font-size: 0.9em;
+		font-size: 1em;
 	}
 
 	h2 {
 		font-size: 1.4em;
 		font-style: italic;
+		font-family: 'Kumar One';
 	}
 </style>

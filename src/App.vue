@@ -1,6 +1,7 @@
 <template>
 	<div class="app">
 		<router-link to="/" class="row1 col1"><h1>KALPANA MOHAN</h1></router-link>
+		<p class="row1 col2 headline">writer.</p>
 		<router-link to="/work" class="row1 col3">WORK</router-link>
 		<router-link to="/travel" class="row1 col4">TRAVEL</router-link>
 		<router-link to="/about" class="row1 col5">ABOUT</router-link>
@@ -28,9 +29,13 @@
 		text-align: center;
 		
 		height: auto;
+		margin-left: 3%;
+		margin-right: 3%;
+	}
 
-		margin-left: 2%;
-		margin-right: 2%;
+	.headline {
+		color: brown;
+		font-style: italic;
 	}
 
 	h1 {
@@ -38,12 +43,12 @@
 		font-size: 1.6em;
 	}
 
+	h1:hover {
+		color: gray;
+	}
+
 	a {
 		text-decoration: none;
 		color: black;
-	}
-
-	h1:hover {
-		color: gray;
 	}
 </style>
