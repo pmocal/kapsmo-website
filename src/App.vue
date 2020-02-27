@@ -1,9 +1,9 @@
 <template>
 	<div class="app">
-		<router-link to="/home" class="row1 col1"><h1>KALPANA MOHAN</h1></router-link>
-		<router-link to="/work" class="row1 col3">Work</router-link>
-		<router-link to="/travel" class="row1 col4">Travel</router-link>
-		<router-link to="/about" class="row1 col5">About</router-link>
+		<router-link to="/" class="row1 col1"><h1>KALPANA MOHAN</h1></router-link>
+		<router-link to="/work" class="row1 col3">WORK</router-link>
+		<router-link to="/travel" class="row1 col4">TRAVEL</router-link>
+		<router-link to="/about" class="row1 col5">ABOUT</router-link>
 		<router-view class="row2 col12345"></router-view>
 	</div>
 </template>
@@ -23,17 +23,19 @@
 		
 		display: grid;
 		grid-template-columns: 20% 20% 20% 20% 20%;
-		grid-template-rows: 20% 80%;
+		grid-template-rows: 20% auto;
 		align-items: center;
 		text-align: center;
 		
-		width: 100vw;
-		height: 100vh;
+		height: auto;
+
+		margin-left: 2%;
+		margin-right: 2%;
 	}
 
 	h1 {
 		font-weight: bold;
-		font-size: 1.5em;
+		font-size: 1.6em;
 	}
 
 	a {

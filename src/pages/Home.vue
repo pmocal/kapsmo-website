@@ -4,7 +4,7 @@
 			<img src="/assets/homebanner.jpeg">
 		</template>
 		<template v-slot:main>
-			<h2>SO MUCH TO SAY</h2>
+			<h2>So Much To Say</h2>
 			<br>
 			<p>On many days, I feel like a straight female <a href="https://en.wikipedia.org/wiki/David_Sedaris">David Sedaris</a> trapped in a sari. The pieces I presented at a 2012 event in a San Francisco theater—"Dear Victoria", "Not For Me" and "Facebook Face-off"—will tell you when my teeth tend to molt into fangs.  I've written about life, people, lifestyles, parenting, travel and, yes, even death. But what I enjoy most is writing about life as I'm living it. There's always so much to say.</p>
 			<br>
@@ -31,4 +31,7 @@
 </script>
 
 <style scoped>
+	h2 {
+		font-family: 'Kumar One';
+	}
 </style>

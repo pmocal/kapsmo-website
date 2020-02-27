@@ -18,9 +18,9 @@
 <style scoped>
 	.container {
 		display: grid;
-		grid-template-rows: 25% 25% 25% 25%;
+		grid-template-rows: 25% auto;
 		grid-template-columns: 20% 20% 20% 20% 20%;
-		height: 100%;
+		height: auto;
 	}
 
 	.photocontainer img {
@@ -38,6 +38,7 @@
 	}
 
 	h2 {
-		font-size: 1.2em;
+		font-size: 1.4em;
+		font-style: italic;
 	}
 </style>
