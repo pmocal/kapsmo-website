@@ -6,6 +6,7 @@ Vue.config.productionTip = false
 Vue.use(VueRouter);
 
 import Travel from './pages/Travel.vue'
+import Home from './pages/Home.vue'
 import TravelLocation from './pages/TravelLocation.vue'
 import Work from './pages/Work.vue'
 import About from './pages/About.vue'
@@ -20,6 +21,7 @@ const routes = [
 			}
 		]
 	},
+	{ path: '/home', component: Home },
 	{ path: '/work', component: Work },
 	{ path: '/about', component: About },
 	{ path: '/article/:id', component: Article }
