@@ -18,9 +18,9 @@
 <style scoped>
 	.container {
 		display: grid;
-		grid-template-rows: 25% auto;
+		grid-template-rows: 35% minmax(65%, auto);
 		grid-template-columns: 20% 20% 20% 20% 20%;
-		height: auto;
+		height: 100%;
 	}
 
 	.photocontainer img {
@@ -31,6 +31,7 @@
 
 	main {
 		padding: 2%;
+		padding-bottom: 3%;
 		text-align: left;
 		color: black;
 		line-height: normal;

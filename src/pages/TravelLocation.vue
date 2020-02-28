@@ -1,20 +1,16 @@
 <template>
-	<base-layout>
-		<template v-slot:title>
-			<h2>{{ $route.params.id }}</h2>
-		</template>
-		<template v-slot:main>
-		</template>
-	</base-layout>
+	<div>
+<!-- 		<img :src="'assets/' + route.params.id + '.jpg'">
+ -->	</div>
 </template>
 
 <script>
-	import BaseLayout from './../components/BaseLayout.vue'
-	
 	export default {
 		name: 'TravelLocation',
-		components: {
-			BaseLayout
+		data() {
+			return {
+				route: ""
+			}
 		}
 	}
 </script>

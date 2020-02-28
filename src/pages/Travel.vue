@@ -1,12 +1,39 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<h2>TRAVEL</h2>
+			<img src="/assets/travelbanner.png">
 		</template>
 		<template v-slot:main>
-			<router-link to="/location/paris"><img src="assets/paris.jpg"></router-link>
-			<router-link to="/location/chennai"><img src="assets/chennai.jpeg"></router-link>
-			<router-view></router-view>
+			<div class="travel">
+				<p class="headline">Travel</p>
+				<div class="locations">
+					<div>
+						<router-link to="/travel/paris">Paris</router-link>
+					</div>
+					<div>
+						<router-link to="/travel/chennai">Chennai</router-link>
+					</div>
+					<div>
+						<router-link to="/travel/saratoga">Saratoga</router-link>
+					</div>
+					<div>
+						<router-link to="/travel/beijing">Beijing</router-link>
+					</div>
+					<div>
+						<router-link to="/travel/rome">Rome</router-link>
+					</div>
+					<div>
+						<router-link to="/travel/palakkad">Palakkad</router-link>
+					</div>
+					<div>
+						<router-link to="/travel/colombo">Colombo</router-link>
+					</div>
+					<div>
+						<router-link to="/travel/berlin">Berlin</router-link>
+					</div>
+				</div>
+				<router-view></router-view>
+			</div>
 		</template>
 	</base-layout>
 </template>
@@ -23,13 +50,22 @@
 </script>
 
 <style scoped>
-	img {
-		height: 40%;
-		width: 20%;
+	.travel {
+		text-align: center;
+		padding-top: 2%;
 	}
-
-	main {
+	.locations {
 		display: flex;
 		justify-content: space-around;
+		align-items: center;
+		padding-top: 4%;
+	}
+
+	.locations img {
+		width: 40%;
+	}
+
+	.router-link-active{
+		font-weight: bold;
 	}
 </style>

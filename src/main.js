@@ -16,7 +16,7 @@ const routes = [
 	{ path: '/travel', component: Travel,
 		children: [
 			{
-				path: '/location/:id',
+				path: '/travel/:id',
 				component: TravelLocation
 			}
 		]
@@ -28,6 +28,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+	mode: 'history',
 	routes
 })
 

@@ -1,3 +1,5 @@
+var history = require('connect-history-api-fallback');
+
 // optional: allow environment to specify port
 const port = process.env.PORT || 8080
 const path = require('path');
@@ -5,7 +7,13 @@ const path = require('path');
 // wire up the module
 const express = require('express') 
 // create server instance
-const app = express() 
+const app = express()
+app.use(history({disableDotRule: true,
+	rewrites: [
+    {from: /\/app.js/, to: '/app.js'}
+  ]
+}));
+
 // bind the request to an absolute path or relative to the CWD
 app.use(express.static('dist'))
 // start the server

@@ -1,16 +1,13 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<h2>WORK</h2>
+			<img src="/assets/workbanner.jpeg">
 		</template>
 		<template v-slot:main>
+			<p class="headline">Publications</p>
 			<ul>
-				<li>
-					<p>Daddykins</p>
-				</li>
-				<li>
-					<p>An English Made in India</p>
-				</li>
+				<li><p>Daddykins</p><img class="thumbnail" src="assets/daddykins.jpg"></li>
+				<li><p>An English Made in India</p><img class="thumbnail" src="assets/anenglishmadeinindia.jpg"></li>
 			</ul>
 		</template>
 	</base-layout>
@@ -28,5 +25,19 @@
 </script>
 
 <style scoped>
+	.thumbnail {
+		width: 40%;
+	}
 
+	ul {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	li {
+		height: 100%;
+		align-items: center;
+		display: flex;
+		justify-content: space-around;
+	}
 </style>

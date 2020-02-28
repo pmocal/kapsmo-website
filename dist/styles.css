@@ -1,7 +1,15 @@
-html {
+html, body {
 	height: 100%;
 }
 
-body {
-	min-height: 100%;
+.headline {
+	color: brown;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+ul {
+	list-style-type: square;
+	list-style-position: outside;
 }
