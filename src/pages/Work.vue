@@ -6,8 +6,14 @@
 		<template v-slot:main>
 			<p class="headline">Publications</p>
 			<ul>
-				<li><p>Daddykins</p><img class="thumbnail" src="assets/daddykins.jpg"></li>
-				<li><p>An English Made in India</p><img class="thumbnail" src="assets/anenglishmadeinindia.jpg"></li>
+				<li>
+					<p>Daddykins: A Memoir of My Father and I</p>
+					<img class="thumbnail" src="assets/daddykins.jpg">
+				</li>
+				<li>
+					<p>An English Made in India</p>
+					<img class="thumbnail" src="assets/anenglishmadeinindia.jpg">
+				</li>
 			</ul>
 		</template>
 	</base-layout>
@@ -26,7 +32,8 @@
 
 <style scoped>
 	.thumbnail {
-		width: 40%;
+		max-width: 12em;
+		object-fit: scale-down;
 	}
 
 	ul {
@@ -36,8 +43,9 @@
 
 	li {
 		height: 100%;
+		width: 45%;
 		align-items: center;
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 	}
 </style>

@@ -1,7 +1,7 @@
 <template>
 	<div>
-<!-- 		<img :src="'assets/' + route.params.id + '.jpg'">
- -->	</div>
+		<img :src="'assets/' + route.params.id + '.jpg'">
+	</div>
 </template>
 
 <script>

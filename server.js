@@ -8,10 +8,8 @@ const path = require('path');
 const express = require('express') 
 // create server instance
 const app = express()
-app.use(history({disableDotRule: true,
-	rewrites: [
-    {from: /\/app.js/, to: '/app.js'}
-  ]
+app.use(history({
+	disableDotRule: true,
 }));
 
 // bind the request to an absolute path or relative to the CWD
