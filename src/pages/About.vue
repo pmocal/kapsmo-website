@@ -55,7 +55,7 @@
 
 <style scoped>
 	.container {
-		grid-template-rows: 10% auto;
+		grid-template-rows: auto auto;
 	}
 
 	.about {

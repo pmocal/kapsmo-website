@@ -31,9 +31,6 @@
 </script>
 
 <style scoped>
-	.headline {
-		padding-bottom: 1.5%;
-	}
 	.thumbnail {
 		max-width: 12em;
 		object-fit: scale-down;
