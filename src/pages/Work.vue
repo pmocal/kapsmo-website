@@ -7,12 +7,12 @@
 			<p class="headline">Publications</p>
 			<ul>
 				<li>
-					<p>Daddykins: A Memoir of My Father and I</p>
-					<img class="thumbnail" src="assets/daddykins.jpg">
-				</li>
-				<li>
 					<p>An English Made in India</p>
 					<img class="thumbnail" src="assets/anenglishmadeinindia.jpg">
+				</li>
+				<li>
+					<p>Daddykins: A Memoir of My Father and I</p>
+					<img class="thumbnail" src="assets/daddykins.jpg">
 				</li>
 			</ul>
 		</template>
@@ -31,6 +31,9 @@
 </script>
 
 <style scoped>
+	.headline {
+		padding-bottom: 1.5%;
+	}
 	.thumbnail {
 		max-width: 12em;
 		object-fit: scale-down;

@@ -4,7 +4,7 @@
 			<img src="/assets/travelbanner.png">
 		</template>
 		<template v-slot:main>
-			<div class="travel">
+			<div class="frame">
 				<p class="headline">Travel</p>
 				<div class="locations">
 					<div>
@@ -50,15 +50,15 @@
 </script>
 
 <style scoped>
-	.travel {
-		text-align: center;
-		padding-top: 2%;
+	.frame .headline {
+		padding-top: 1.5%;
+		padding-bottom: 3.5%;
 	}
+
 	.locations {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		padding-top: 4%;
 	}
 
 	.locations img {

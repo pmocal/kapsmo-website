@@ -3,9 +3,14 @@
 		<header class="row1 col12345 photocontainer">
 			<slot name="title"></slot>
 		</header>
-		<main class="row234 col12345">
+		<main class="row23 col12345">
 			<slot name="main"></slot>
 		</main>
+		<footer class="row4 col234">
+			<a class="logo" href="https://twitter.com/kalpanamo" target="_blank"><img src="assets/socialmedia/twitter.svg"></a>
+			<a class="logo" href="https://www.instagram.com/kapsmo/" target="_blank"><img src="assets/socialmedia/instagram.svg"></a>
+			<a class="logo" href="https://www.facebook.com/kalpana.mohan" target="_blank"><img src="assets/socialmedia/facebook.svg"></a>
+		</footer>
 	</div>
 </template>
 
@@ -16,6 +21,21 @@
 </script>
 
 <style scoped>
+	main {
+		margin: 3.5% 2.5%;
+		text-align: left;
+		color: black;
+		line-height: normal;
+		font-size: 1em;
+	}
+
+	h2 {
+		font-size: 1.4em;
+		font-style: italic;
+		font-family: 'Kumar One';
+		padding-bottom: 2.5%;
+	}
+
 	.container {
 		display: grid;
 		grid-template-rows: 35% minmax(65%, auto);
@@ -29,18 +49,17 @@
 		max-height: 100%;
 	}
 
-	main {
-		padding: 2%;
-		padding-bottom: 3%;
+	footer {
+		width: auto;
 		text-align: left;
-		color: black;
-		line-height: normal;
-		font-size: 1em;
+		margin-top: 1%;
+		margin-bottom: 7%;
+		display: flex;
+		justify-content: space-around;
 	}
 
-	h2 {
-		font-size: 1.4em;
-		font-style: italic;
-		font-family: 'Kumar One';
+	.logo {
+		width: 3%;
+		height: 3%;
 	}
 </style>
