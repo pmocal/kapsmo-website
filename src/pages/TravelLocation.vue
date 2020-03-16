@@ -1,23 +1,34 @@
 <template>
-	<div>
-		<img :src="'assets/' + route.params.id + '.jpg'">
+	<div class="frame">
+		<div v-for="url in images.urls" :key="url">
+			<img :src="url">
+		</div>
 	</div>
 </template>
 
-<script>
+<script>	
 	export default {
 		name: 'TravelLocation',
-		data() {
+		data: function() {
 			return {
-				route: ""
+				images: []
+			}
+		},
+		created() {
+			this.images = require('./../../public/assets/locations/' + this.$route.params.id);
+		},
+		watch: {
+			'$route.params.id': function() {
+				this.images = require('./../../public/assets/locations/' + this.$route.params.id);
 			}
 		}
 	}
 </script>
 
 <style scoped>
-	img {
-		height: 40%;
-		width: 20%;
+	.frame img {
+		padding: 30% 15%;
+		height: 90%;
+		width: 90%;
 	}
 </style>

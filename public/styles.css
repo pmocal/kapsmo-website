@@ -2,6 +2,12 @@ html, body {
 	height: 100%;
 }
 
+.frame {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
 .headline {
 	color: brown;
 	font-style: italic;

@@ -52,8 +52,8 @@
 	footer {
 		width: auto;
 		text-align: left;
-		margin-top: 1%;
-		margin-bottom: 7%;
+		margin-top: 3%;
+		margin-bottom: 9%;
 		display: flex;
 		justify-content: space-around;
 	}

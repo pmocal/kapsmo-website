@@ -4,36 +4,20 @@
 			<img src="/assets/travelbanner.png">
 		</template>
 		<template v-slot:main>
+			<p class="headline">Travel</p>
 			<div class="frame">
-				<p class="headline">Travel</p>
-				<div class="locations">
+				<div class="locations" v-for="location in locations" :key="location"  v-on:click="isHidden = true">
 					<div>
-						<router-link to="/travel/paris">Paris</router-link>
-					</div>
-					<div>
-						<router-link to="/travel/chennai">Chennai</router-link>
-					</div>
-					<div>
-						<router-link to="/travel/saratoga">Saratoga</router-link>
-					</div>
-					<div>
-						<router-link to="/travel/beijing">Beijing</router-link>
-					</div>
-					<div>
-						<router-link to="/travel/rome">Rome</router-link>
-					</div>
-					<div>
-						<router-link to="/travel/palakkad">Palakkad</router-link>
-					</div>
-					<div>
-						<router-link to="/travel/colombo">Colombo</router-link>
-					</div>
-					<div>
-						<router-link to="/travel/berlin">Berlin</router-link>
+						<router-link v-bind:to="'/travel/' + location">
+							{{location.charAt(0).toUpperCase() + location.slice(1)}}
+						</router-link>
 					</div>
 				</div>
-				<router-view></router-view>
 			</div>
+			<div v-bind:class="{ hidden: isHidden }" class="frame">
+				<p>See some of my photos by clicking one of the locations above.</p>
+			</div>
+			<router-view></router-view>
 		</template>
 	</base-layout>
 </template>
@@ -45,20 +29,21 @@
 		name: 'Travel',
 		components: {
 			BaseLayout
+		},
+		data: function() {
+			return {
+				locations: ["chennai", "saratoga", "beijing", "rome", "palakkad", "colombo"],
+				isHidden: false
+			}
 		}
 	}
+
 </script>
 
 <style scoped>
-	.frame .headline {
+	.headline {
 		padding-top: 1.5%;
 		padding-bottom: 3.5%;
-	}
-
-	.locations {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
 	}
 
 	.locations img {
@@ -67,5 +52,13 @@
 
 	.router-link-active{
 		font-weight: bold;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.frame {
+		padding: 3% 5%;
 	}
 </style>

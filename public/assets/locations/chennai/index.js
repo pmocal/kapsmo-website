@@ -1,0 +1,2 @@
+exports.urls = [ require("./1.jpeg"), require("./2.jpeg"), require("./3.jpg"), require("./4.jpeg"),
+	require("./5.jpeg"), require("./6.jpg"), require("./7.jpeg"), require("./8.jpeg"), require("./9.jpg"), require("./10.jpeg") ];
