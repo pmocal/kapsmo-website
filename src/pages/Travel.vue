@@ -15,7 +15,7 @@
 				</div>
 			</div>
 			<div v-bind:class="{ hidden: isHidden }" class="frame">
-				<p>See some of my photos by clicking one of the locations above.</p>
+				<p>Click one of the locations above to see some of my photos.</p>
 			</div>
 			<router-view></router-view>
 		</template>
@@ -44,6 +44,10 @@
 	.headline {
 		padding-top: 1.5%;
 		padding-bottom: 3.5%;
+	}
+
+	.locations a {
+		color: black;
 	}
 
 	.locations img {

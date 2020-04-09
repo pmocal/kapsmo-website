@@ -1,2 +1,10 @@
 exports.urls = [ require("./1.jpg"), require("./2.jpg"), require("./3.jpg"), require("./4.jpg"),
-	require("./5.jpg"), require("./6.jpg"), require("./7.jpg"), require("./8.jpg"), require("./9.jpg"), require("./10.jpg") ];
+	require("./5.jpg"), require("./6.jpg"), require("./7.jpg"), require("./8.jpg"), require("./9.jpg"), require("./10.jpg"),
+	require("./11.jpeg"), require("./12.jpg"), require("./13.jpg"), require("./14.jpg"),
+	require("./15.jpeg"), require("./16.jpeg"), require("./17.jpeg"), require("./18.jpg"), require("./19.jpeg"), 
+	require("./20.jpeg"), require("./21.jpg"), require("./22.jpeg"), require("./23.jpeg"), require("./24.jpeg"),
+	require("./25.jpg"), require("./26.jpg"), require("./27.jpg"), require("./28.jpg"), require("./29.jpg"), require("./30.jpg"),
+	require("./31.jpg"), require("./32.jpeg"), require("./33.jpeg"), require("./34.jpeg"),
+	require("./35.jpeg"), require("./36.jpeg"), require("./37.jpeg"), require("./38.jpeg"), require("./39.jpeg"), require("./40.jpeg"),
+	require("./41.jpeg"), require("./42.jpeg"), require("./43.jpeg"), require("./44.jpeg"),
+	require("./45.jpg"), require("./46.jpeg"), require("./47.jpg"), require("./48.jpeg"), require("./49.jpeg") ];

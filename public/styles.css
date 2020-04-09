@@ -6,6 +6,7 @@ html, body {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	text-align: center;
 }
 
 .headline {
@@ -18,8 +19,4 @@ html, body {
 ul {
 	list-style-type: square;
 	list-style-position: outside;
-}
-
-.frame {
-	text-align: center;
 }

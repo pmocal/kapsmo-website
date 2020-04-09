@@ -21,7 +21,6 @@
     name: 'TravelLocation',
     data: function() {
       return {
-        images: [],
         theatrical: ""
       }
     },
@@ -41,12 +40,9 @@
         }
       }
     },
-    created() {
-      this.images = require('./../../public/assets/locations/' + this.$route.params.id);
-    },
-    watch: {
-      '$route.params.id': function() {
-        this.images = require('./../../public/assets/locations/' + this.$route.params.id);
+    computed: {
+      images: function() {
+        return require('./../../public/assets/locations/' + this.$route.params.id)
       }
     }
   }
@@ -59,6 +55,7 @@
   #frame img {
     width: 60%;
     padding: 5%;
+    padding-bottom: 1%;
   }
   img {
     width: 70%;

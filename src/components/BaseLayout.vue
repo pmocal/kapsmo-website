@@ -38,7 +38,7 @@
 
 	.container {
 		display: grid;
-		grid-template-rows: 35% minmax(65%, auto);
+		grid-template-rows: 35% minmax(40%, auto);
 		grid-template-columns: 20% 20% 20% 20% 20%;
 		height: 100%;
 	}
