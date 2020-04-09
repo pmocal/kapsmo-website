@@ -1,12 +1,12 @@
 <template>
 	<div class="outer">
 		<div class="inner1">
-			<img class="daddykins" src="assets/daddykins.jpg">
+			<img class="cover" :src="'assets/' + view + '.jpg'">
 		</div>
 		<div class="inner2">
-			<h1>Daddykins: A Memoir of My Father and I</h1>
-			<p>When journalist Kalpana Mohan's elderly father falls ill in Chennai, she is on the next flight over from California and the home she has shared with her husband for three decades. Caring for her sometimes cranky, sometimes playful, and always adored father at his home in Chennai, Mohan sets out to piece together an account of her father's life, from his poverty-stricken childhood in a village in south India, to his arranged marriage, to his first job in the city, all the while coming to terms with his inevitable passing.</p>
-			<p>Mohan's tender, moving, and sometimes hilarious memoir is an account of a changing India captured in her father's life, from the sheer feat of surviving poverty in I920s India of his birth, to witnessing key moments in the nation's history and changing alongside them. Above all, Daddykins is an intimate and deeply relatable account of our relationships with our parents whatever our age, and the shared experiences of love and grief that unite us all.</p>
+			<h1>{{title}}</h1>
+			<p>{{para1}}</p>
+			<p>{{para2}}</p>
 			<div>
 				<a href="https://www.amazon.com/Daddykins-Memoir-My-Father-I/dp/9386349531">
 					<img class="amazon" src="assets/media/available_at_amazon_1200x600.png">
@@ -20,6 +20,35 @@
 </template>
 
 <script>
+	export default {
+		name: 'WorkDetail',
+		props: {
+			'view': String
+		},
+		computed: {
+			title: function() {
+				if (this.view === "daddykins") {
+					return "Daddykins: A Memoir of My Father and I";
+				} else {
+					return "An English Made in India: How a Foreign Language Became Local";
+				}
+			},
+			para1: function() { 
+				if (this.view === "daddykins") {
+					return "When journalist Kalpana Mohan's elderly father falls ill in Chennai, she is on the next flight over from California and the home she has shared with her husband for three decades. Caring for her sometimes cranky, sometimes playful, and always adored father at his home in Chennai, Mohan sets out to piece together an account of her father's life, from his poverty-stricken childhood in a village in south India, to his arranged marriage, to his first job in the city, all the while coming to terms with his inevitable passing.";
+				} else {
+					return "In An English Made in India, the author delves into the various aspects of Indian English—as lingua franca, colonial bequest, the language of the elite and those who aspire to elite status. She explores the English language’s earliest influences on Indian languages (and vice versa), the evolution of Indian English after independence and the way the language is spoken today. She talks to people from different parts of the country to create a colourful portrait of the ways in which the English language has influenced different segments of Indian society.";
+				}
+			},
+			para2: function() {
+				if (this.view === "daddykins") {
+					return "Mohan's tender, moving, and sometimes hilarious memoir is an account of a changing India captured in her father's life, from the sheer feat of surviving poverty in I920s India of his birth, to witnessing key moments in the nation's history and changing alongside them. Above all, Daddykins is an intimate and deeply relatable account of our relationships with our parents whatever our age, and the shared experiences of love and grief that unite us all.";
+				} else {
+					return "The book is an entertaining narrative about the myriad Indianisms to be found in the English used by a large percentage of Indians; the growing importance of Indian English in a world of many Englishes; the ongoing tussle between the elite who speak the King’s English and those who speak in their mother tongue or mother-tongue-accented English; the effect of the IT boom on global English; and the changing attitudes of young Indians towards a language introduced by the Raj hundreds of years ago.";
+				}
+			}
+		}
+	}
 </script>
 
 <style scoped>
@@ -63,7 +92,7 @@ p {
 	height: 100%;
 }
 
-.daddykins {
+.cover {
 	width: 100%;
 }
 

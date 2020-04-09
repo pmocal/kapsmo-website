@@ -6,17 +6,13 @@
 		<template v-slot:main>
 			<p class="headline">Publications</p>
 			<ul>
-				<li @click="detail">
-					<p>An English Made in India</p>
-					<img class="thumbnail" src="assets/anenglishmadeinindia.jpg">
-				</li>
-				<li @click="detail">
-					<p>Daddykins: A Memoir of My Father and I</p>
-					<img class="thumbnail" src="assets/daddykins.jpg">
+				<li v-for="work in works" :key="work" @click="detail">
+					<p>{{ work[1] }}</p>
+					<img class="thumbnail" :src="'assets/' + work[0] + '.jpg'">
 				</li>
 			</ul>
 			<transition name="component-fade" mode="out-in">
-				<work-detail ref="detail" v-if="selection"></work-detail>
+				<work-detail ref="detail" v-if="selection" :view="view"></work-detail>
 			</transition>
 		</template>
 	</base-layout>
@@ -35,17 +31,18 @@
 		data: function() {
 			return {
 				selection: false,
-				view: "AnEnglishMadeInIndia"
+				works: [["daddykins", "Daddykins: A Memoir of My Father and I"], ["anenglishmadeinindia", "An English Made in India: How a Foreign Language Became Local"]],
+				view: "anenglishmadeinindia"
 			}
 		},
 		methods: {
 			detail(event) {
-				this.selection = true;
 				if (event.target.childNodes[0].textContent[0] === 'D') {
-					this.view = "Daddykins";
+					this.view = this.works[0][0];
 				} else {
-					this.view = "AnEnglishMadeInIndia";
+					this.view = this.works[1][0];
 				}
+				this.selection = true;
 				this.$refs.detail.scrollTop = this.$refs.detail.scrollHeight;
 			}
 		}
