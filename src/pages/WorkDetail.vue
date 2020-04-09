@@ -128,11 +128,11 @@ p {
 }
 
 .goodreads {
-	height: 60px;
+	height: 50px;
 }
 
 .publisher {
-	height: 50px;
+	height: 40px;
 	padding-right: 7%;
 }
 </style>

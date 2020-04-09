@@ -66,6 +66,7 @@
 
 	li:hover {
 		opacity: 1.0;
+		cursor: pointer;
 	}
 
 	.component-fade-enter-active, .component-fade-leave-active {
