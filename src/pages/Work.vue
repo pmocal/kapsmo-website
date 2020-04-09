@@ -16,7 +16,7 @@
 				</li>
 			</ul>
 			<transition name="component-fade" mode="out-in">
-				<component ref="detail" v-if="selection" v-bind:is="view"></component>
+				<work-detail ref="detail" v-if="selection"></work-detail>
 			</transition>
 		</template>
 	</base-layout>
@@ -24,29 +24,27 @@
 
 <script>
 	import BaseLayout from './../components/BaseLayout.vue'
-	import WorkDaddykins from './../pages/WorkDaddykins.vue'
-	import WorkAnEnglishMadeInIndia from './../pages/WorkAnEnglishMadeInIndia.vue'
+	import WorkDetail from './../pages/WorkDetail.vue'
 
 	export default {
 		name: 'Work',
 		components: {
 			BaseLayout,
-			WorkDaddykins,
-			WorkAnEnglishMadeInIndia
+			WorkDetail
 		},
 		data: function() {
 			return {
 				selection: false,
-				view: WorkDaddykins
+				view: "AnEnglishMadeInIndia"
 			}
 		},
 		methods: {
 			detail(event) {
 				this.selection = true;
 				if (event.target.childNodes[0].textContent[0] === 'D') {
-					this.view = "WorkDaddykins";
+					this.view = "Daddykins";
 				} else {
-					this.view = "WorkAnEnglishMadeInIndia";
+					this.view = "AnEnglishMadeInIndia";
 				}
 				this.$refs.detail.scrollTop = this.$refs.detail.scrollHeight;
 			}
@@ -66,11 +64,17 @@
 	}
 
 	li {
+		opacity: 0.5;
+		padding: 1%;
 		height: 100%;
 		width: 45%;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+	}
+
+	li:hover {
+		opacity: 1.0;
 	}
 
 	.component-fade-enter-active, .component-fade-leave-active {
