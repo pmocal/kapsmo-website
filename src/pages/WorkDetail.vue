@@ -7,9 +7,12 @@
 			<h1>{{title}}</h1>
 			<p>{{para1}}</p>
 			<p>{{para2}}</p>
-			<div>
+			<div class="flex-container">
 				<a href="https://www.amazon.com/Daddykins-Memoir-My-Father-I/dp/9386349531">
 					<img class="amazon" src="assets/media/available_at_amazon_1200x600.png">
+				</a>
+				<a :href="href">
+					<img class="publisher" :src="'assets/media/' + view + 'publisher.png'">
 				</a>
 				<a href="https://www.goodreads.com/en/book/show/41139964-daddykins">
 					<img class="goodreads" src="assets/media/goodreads_icon_100x100.png">
@@ -52,6 +55,15 @@
 				} else {
 					return "";
 				}
+			},
+			href: function() {
+				if (this.view === "daddykins") {
+					return "https://www.bloomsbury.com/in/daddykins-9789385936517/";
+				} else if (this.view === "anenglishmadeinindia") {
+					return "http://www.alephbookcompany.com/book/an-english-made-in-india-how-a-foreign-language-became-local/"
+				} else {
+					return "";
+				}
 			}
 		}
 	}
@@ -73,6 +85,7 @@ p {
 	grid-template-columns: 30% 70%;
 	grid-template-rows: 100%;
 	padding: 5%;
+	padding-bottom: 0;
 }
 
 .inner1 {
@@ -102,11 +115,24 @@ p {
 	width: 100%;
 }
 
+.flex-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 2%;
+	align-items: center;
+}
+
 .amazon {
-	height: 90px;
+	height: 80px;
 }
 
 .goodreads {
-	height: 70px;
+	height: 60px;
+}
+
+.publisher {
+	height: 50px;
+	padding-right: 7%;
 }
 </style>

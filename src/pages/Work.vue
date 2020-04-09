@@ -6,7 +6,7 @@
 		<template v-slot:main>
 			<p class="headline">Publications</p>
 			<ul>
-				<li v-for="work in works" :key="work[0]" :attr="work[0]" @click="detail">
+				<li v-for="work in works" :key="work[0]" :work="work[0]" @click="detail">
 					<p>{{ work[1] }}</p>
 					<img class="thumbnail" :src="'assets/' + work[0] + '.jpg'">
 				</li>
@@ -29,16 +29,15 @@
 			BaseLayout,
 			WorkDetail
 		},
-		data: function() {
+		data: function() {	
 			return {
 				works: [["daddykins", "Daddykins: A Memoir of My Father and I"], ["anenglishmadeinindia", "An English Made in India: How a Foreign Language Became Local"]],
 				view: "",
-				message: ""
 			}
 		},
 		methods: {
 			detail(event) {
-				this.view = event.currentTarget.getAttribute('attr');
+				this.view = event.currentTarget.getAttribute('work');
 			}
 		}
 	}
