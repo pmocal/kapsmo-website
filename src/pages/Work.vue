@@ -6,14 +6,15 @@
 		<template v-slot:main>
 			<p class="headline">Publications</p>
 			<ul>
-				<li v-for="work in works" :key="work" @click="detail">
+				<li v-for="work in works" :key="work[0]" :attr="work[0]" @click="detail">
 					<p>{{ work[1] }}</p>
 					<img class="thumbnail" :src="'assets/' + work[0] + '.jpg'">
 				</li>
 			</ul>
 			<transition name="component-fade" mode="out-in">
-				<work-detail ref="detail" v-if="selection" :view="view"></work-detail>
+				<work-detail v-if="view" :view="view"></work-detail>
 			</transition>
+			<p>{{message}}</p>
 		</template>
 	</base-layout>
 </template>
@@ -30,20 +31,14 @@
 		},
 		data: function() {
 			return {
-				selection: false,
 				works: [["daddykins", "Daddykins: A Memoir of My Father and I"], ["anenglishmadeinindia", "An English Made in India: How a Foreign Language Became Local"]],
-				view: "anenglishmadeinindia"
+				view: "",
+				message: ""
 			}
 		},
 		methods: {
 			detail(event) {
-				if (event.target.childNodes[0].textContent[0] === 'D') {
-					this.view = this.works[0][0];
-				} else {
-					this.view = this.works[1][0];
-				}
-				this.selection = true;
-				this.$refs.detail.scrollTop = this.$refs.detail.scrollHeight;
+				this.view = event.currentTarget.getAttribute('attr');
 			}
 		}
 	}
