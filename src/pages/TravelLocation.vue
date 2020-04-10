@@ -56,9 +56,11 @@
     width: 60%;
     padding: 5%;
     padding-bottom: 1%;
+    cursor: default;
   }
   img {
     width: 70%;
+    cursor: pointer;
   }
   #theater {
     width: 80%;
