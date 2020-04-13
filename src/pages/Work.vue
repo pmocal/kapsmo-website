@@ -6,7 +6,7 @@
 		<template v-slot:main>
 			<p class="headline">Publications</p>
 			<ul>
-				<li v-for="work in works" :key="work[0]" :work="work[0]" @click="detail">
+				<li v-for="work in works" :key="work[0]" :work="work[0]" :class="(work[0] === view) ? 'opaque' : ''" @click="detail">
 					<p>{{ work[1] }}</p>
 					<img class="thumbnail" :src="'assets/' + work[0] + '.jpg'">
 				</li>
@@ -14,7 +14,6 @@
 			<transition name="component-fade" mode="out-in">
 				<work-detail v-if="view" :view="view"></work-detail>
 			</transition>
-			<p>{{message}}</p>
 		</template>
 	</base-layout>
 </template>
@@ -67,6 +66,10 @@
 	li:hover {
 		opacity: 1.0;
 		cursor: pointer;
+	}
+
+	.opaque {
+		opacity: 1.0;
 	}
 
 	.component-fade-enter-active, .component-fade-leave-active {
