@@ -5,7 +5,8 @@ const port = process.env.PORT || 8080
 const path = require('path');
 
 // wire up the module
-const express = require('express') 
+const express = require('express')
+
 // create server instance
 const app = express()
 app.use(history({

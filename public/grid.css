@@ -68,6 +68,11 @@
 	grid-column-end: 6;
 }
 
+.col123456 {
+	grid-column-start: 1;
+	grid-column-end: 7;
+}
+
 .col2 {
 	grid-column-start: 2;
 	grid-column-end: 3;
@@ -85,7 +90,12 @@
 
 .col2345 {
 	grid-column-start: 2;
-	grid-column-end: 6
+	grid-column-end: 6;
+}
+
+.col23456 {
+	grid-column-start: 2;
+	grid-column-end: 7;
 }
 
 .col3 {
@@ -116,4 +126,14 @@
 .col5 {
 	grid-column-start: 5;
 	grid-column-end: 6;
+}
+
+.col56 {
+	grid-column-start: 5;
+	grid-column-end: 7;
+}
+
+.col6 {
+	grid-column-start: 6;
+	grid-column-end: 7;
 }

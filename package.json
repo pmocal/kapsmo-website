@@ -13,6 +13,7 @@
   "dependencies": {
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.4.3",
+    "cors": "latest",
     "express": "^4.17.1",
     "style-loader": "^1.1.1",
     "vue": "^2.6.10",
