@@ -4,7 +4,20 @@
 			<p class="headline">BLOG</p>
 		</template>
 		<template v-slot:main>
-			<p>{{ info }}</p>
+			<ol>
+				<li
+					v-for="post in posts"
+					:key="post._id"
+				>
+					<h1>{{ post.title }}</h1>
+					<p class="postBody">{{ post.text }}</p>
+					<div class="postFooter">
+						<p>{{ new Date(post.timestamp).getMonth() }}/{{ new Date(post.timestamp).getDate() }}/{{ new Date(post.timestamp).getFullYear() }}</p>
+						<a :href="post.link">Link</a>
+					</div>
+					<hr>
+				</li>
+			</ol>
 		</template>
 	</base-layout>
 </template>
@@ -19,7 +32,7 @@
 		},
 		data () {
 			return {
-				info: null
+				posts: null
 			}
 		},
 		mounted() {
@@ -29,7 +42,7 @@
 			}).then(function(response) {
 				return response.json();
 			}).then(function(data) {
-				that.info = data;	
+				that.posts = data;	
 			});
 
 		}
@@ -47,4 +60,15 @@
 		text-decoration: underline;
 	}
 
+	.postBody {
+		margin-left: 5%;
+		margin-top: 2%;
+		white-space: pre-line;
+	}
+
+	.postFooter {
+		display: flex;
+		justify-content: space-between;
+		margin: 3%;
+	}
 </style>

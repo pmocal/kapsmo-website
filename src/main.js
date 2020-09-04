@@ -12,6 +12,7 @@ import Work from './pages/Work.vue'
 import About from './pages/About.vue'
 import Article from './pages/Article.vue'
 import Blog from './pages/Blog.vue'
+import BlogAdmin from './pages/BlogAdmin.vue'
 
 const routes = [
 	{ path: '/travel', component: Travel,
@@ -22,7 +23,14 @@ const routes = [
 			}
 		]
 	},
-	{ path: '/blog', component: Blog },
+	{ path: '/blog', component: Blog,
+		children: [
+			{
+				path: '/blog/admin',
+				component: BlogAdmin
+			}
+		]
+	},
 	{ path: '/', component: Home },
 	{ path: '/work', component: Work },
 	{ path: '/about', component: About },

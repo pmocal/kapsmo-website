@@ -64,10 +64,6 @@
 </script>
 
 <style scoped>
-h1 {
-	font-size: 1.4em;
-	padding: 2%;
-}
 
 p {
 	padding: 3%;
