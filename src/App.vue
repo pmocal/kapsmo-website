@@ -5,7 +5,7 @@
 			<p class="row1 col2 tagline">writer.</p>
 			<router-link v-on:mouseover="active = !active" to="/books" class="row1 col3 work">BOOKS</router-link>
 			<router-link to="/work" class="row1 col4">WORK</router-link>
-			<router-link to="/travel" class="row1 col4">TRAVEL</router-link>
+			<router-link to="/travel" class="row1 col5">TRAVEL</router-link>
 			<router-link to="/about" class="row1 col6">ABOUT</router-link>
 		</div>
 		<hr>
