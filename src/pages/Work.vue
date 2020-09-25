@@ -1,91 +1,74 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<img src="/assets/workbanner.jpeg">
+			<p class="headline">Work</p>
 		</template>
 		<template v-slot:main>
-			<p class="headline">Publications</p>
-			<ul>
+			<ol v-if="dataReady">
 				<li
-					v-for="work in works"
-					:key="work[0]"
-					:work="work[0]"
-					:class="(work[0] === view) ? 'opaque' : ''"
-					@click="detail"
+					v-for="post in posts"
+					:key="post._id"
 				>
-					<p>{{ work[1] }}</p>
-					<img class="thumbnail" :src="'assets/' + work[0] + '.jpg'">
+					<h1>{{ post.title }}</h1>
+					<p class="postBody">{{ post.text }}</p>
+					<div class="postFooter">
+						<p>{{ new Date(post.timestamp).getMonth() }}/{{ new Date(post.timestamp).getDate() }}/{{ new Date(post.timestamp).getFullYear() }}</p>
+						<a :href="post.link">Link</a>
+					</div>
+					<hr>
 				</li>
-			</ul>
-			<transition name="component-fade" mode="out-in">
-				<work-detail
-					v-if="view"
-					:view="view"
-				/>
-			</transition>
+			</ol>
 		</template>
 	</base-layout>
 </template>
 
 <script>
 	import BaseLayout from './../components/BaseLayout.vue'
-	import WorkDetail from './../pages/WorkDetail.vue'
 
 	export default {
 		name: 'Work',
 		components: {
-			BaseLayout,
-			WorkDetail
+			BaseLayout
 		},
-		data: function() {	
+		data () {
 			return {
-				works: [["daddykins", "Daddykins: A Memoir of My Father and I"], ["anenglishmadeinindia", "An English Made in India: How a Foreign Language Became Local"]],
-				view: ""
+				posts: null,
+				dataReady: false
 			}
 		},
-		methods: {
-			detail(event) {
-				this.view = event.currentTarget.getAttribute('work');
+		async created() {
+			let response = await fetch("https://salty-temple-72490.herokuapp.com/posts");
+			this.posts = await response.json();
+			if (this.posts != null) {
+				this.posts.sort(function(a,b){
+					return a.timestamp.localeCompare(b.timestamp);
+				}).reverse()
 			}
+			this.dataReady = true;
 		}
 	}
 </script>
 
 <style scoped>
-	.thumbnail {
-		max-width: 12em;
-		object-fit: scale-down;
+	.container {
+		grid-template-rows: auto auto;
 	}
 
-	ul {
-		display: flex;
-		justify-content: space-around;
+	.headline {
+		font-style: normal;
+		font-weight: bold;
+		text-decoration: underline;
 	}
 
-	li {
-		opacity: 0.5;
-		padding: 1%;
-		height: 100%;
-		width: 45%;
-		align-items: center;
+	.postBody {
+		margin-left: 5%;
+		margin-top: 2%;
+		white-space: pre-line;
+	}
+
+	.postFooter {
 		display: flex;
 		justify-content: space-between;
-	}
-
-	li:hover {
-		opacity: 1.0;
-		cursor: pointer;
-	}
-
-	.opaque {
-		opacity: 1.0;
-	}
-
-	.component-fade-enter-active, .component-fade-leave-active {
-		transition: opacity .3s ease;
-	}
-	.component-fade-enter, .component-fade-leave-to
-	/* .component-fade-leave-active below version 2.1.8 */ {
-		opacity: 0;
+		margin: 3%;
 	}
 </style>

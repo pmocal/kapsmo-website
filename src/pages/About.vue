@@ -1,7 +1,7 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<p class="headline">ABOUT</p>
+			<p class="headline">About</p>
 		</template>
 		<template v-slot:main>
 			<div class="about">

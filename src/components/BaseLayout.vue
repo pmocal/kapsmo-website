@@ -52,7 +52,7 @@
 	footer {
 		width: auto;
 		text-align: left;
-		margin-top: 3%;
+		margin-top: 9%;
 		margin-bottom: 9%;
 		display: flex;
 		justify-content: space-around;
