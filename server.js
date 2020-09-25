@@ -9,12 +9,13 @@ const express = require('express')
 
 // create server instance
 const app = express()
+app.use(express.static(path.resolve(__dirname, 'dist')))
+
 app.use(history({
 	disableDotRule: true,
 }));
 
 // bind the request to an absolute path or relative to the CWD
-app.use(express.static('dist'))
 // start the server
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
