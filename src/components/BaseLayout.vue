@@ -7,7 +7,7 @@
 			<slot name="main"></slot>
 		</main>
 		<footer class="row4 col2345">
-			<p>website<br>created<br>by<br><a href="https://pmocal.github.io">pmocal</a></p>
+			<p>website<br>by<br><a href="https://pmocal.github.io">pmocal</a></p>
 			<a class="logo" href="https://twitter.com/kalpanamo" target="_blank"><img src="assets/socialmedia/twitter.svg"></a>
 			<a class="logo" href="https://www.instagram.com/kapsmo/" target="_blank"><img src="assets/socialmedia/instagram.svg"></a>
 			<a class="logo" href="https://www.facebook.com/kalpana.mohan" target="_blank"><img src="assets/socialmedia/facebook.svg"></a>
@@ -23,7 +23,7 @@
 
 <style scoped>
 	main {
-		margin: 3.5% 2.5%;
+		margin: .5% 9%;
 		text-align: left;
 		color: black;
 		line-height: normal;
@@ -32,8 +32,7 @@
 
 	h2 {
 		font-size: 1.4em;
-		font-style: italic;
-		font-family: 'Kumar One';
+		font-style: bold;
 		padding-bottom: 2.5%;
 	}
 
@@ -47,7 +46,7 @@
 	.photocontainer img {
 		object-fit: cover;
 		width: 100%;
-		max-height: 100%;
+		max-height: 80%;
 	}
 
 	footer {

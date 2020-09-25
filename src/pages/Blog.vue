@@ -4,7 +4,7 @@
 			<p class="headline">BLOG</p>
 		</template>
 		<template v-slot:main>
-			<ol>
+			<ol v-if="dataReady">
 				<li
 					v-for="post in posts"
 					:key="post._id"
@@ -32,19 +32,19 @@
 		},
 		data () {
 			return {
-				posts: null
+				posts: null,
+				dataReady: false
 			}
 		},
-		mounted() {
-			var that = this;
-			fetch("https://salty-temple-72490.herokuapp.com/posts", {
-				method: 'get'
-			}).then(function(response) {
-				return response.json();
-			}).then(function(data) {
-				that.posts = data;	
-			});
-
+		async created() {
+			let response = await fetch("https://salty-temple-72490.herokuapp.com/posts");
+			this.posts = await response.json();
+			if (this.posts != null) {
+				this.posts.sort(function(a,b){
+					return a.timestamp.localeCompare(b.timestamp);
+				}).reverse()
+			}
+			this.dataReady = true;
 		}
 	}
 </script>
