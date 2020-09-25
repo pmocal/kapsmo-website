@@ -15,9 +15,9 @@ app.use(history({
 
 // bind the request to an absolute path or relative to the CWD
 app.use(express.static('dist'))
-// // start the server
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
-// });
+// start the server
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'dist/index.html'));
+});
 
 app.listen(port);
