@@ -13,7 +13,7 @@ import Work from './pages/Work.vue'
 import About from './pages/About.vue'
 import Article from './pages/Article.vue'
 import Books from './pages/Books.vue'
-import BlogAdmin from './pages/BlogAdmin.vue'
+import WorkAdmin from './pages/WorkAdmin.vue'
 
 const routes = [
 	{ path: '/travel', component: Travel,
@@ -24,14 +24,8 @@ const routes = [
 			}
 		]
 	},
-	{ path: '/work', component: Work,
-		children: [
-			{
-				path: '/blog/admin',
-				component: BlogAdmin
-			}
-		]
-	},
+	{ path: '/work', component: Work },
+	{ path: '/work/admin', component: WorkAdmin },
 	{ path: '/', component: Home },
 	{ path: '/books', component: Books },
 	{ path: '/about', component: About },

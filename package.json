@@ -14,6 +14,7 @@
     "watch": "webpack --watch"
   },
   "dependencies": {
+    "@tinymce/tinymce-vue": "^3.2.3",
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.6.5",
     "cors": "latest",
