@@ -20,6 +20,8 @@ const routes = [
 		children: [
 			{
 				path: '/travel/:id',
+				name: 'travelLocation',
+				props: true,
 				component: TravelLocation
 			}
 		]

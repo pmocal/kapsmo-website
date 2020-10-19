@@ -4,13 +4,12 @@
 			<img src="/assets/workbanner.jpeg">
 		</template>
 		<template v-slot:main>
-			<p class="headline">Books</p>
 			<ul>
 				<li
 					v-for="work in works"
 					:key="work[0]"
 					:work="work[0]"
-					:class="(work[0] === view) ? 'opaque' : ''"
+					:class="{ translucent: view }"
 					@click="detail"
 				>
 					<p>{{ work[1] }}</p>
@@ -46,6 +45,7 @@
 		methods: {
 			detail(event) {
 				this.view = event.currentTarget.getAttribute('work');
+				event.currentTarget.setAttribute('id', 'opaque');
 			}
 		}
 	}
@@ -63,7 +63,6 @@
 	}
 
 	li {
-		opacity: 0.5;
 		padding: 1%;
 		height: 100%;
 		width: 45%;
@@ -72,12 +71,20 @@
 		justify-content: space-between;
 	}
 
+	li * {
+		padding: 1%;
+	}
+
 	li:hover {
 		opacity: 1.0;
 		cursor: pointer;
 	}
 
-	.opaque {
+	.translucent {
+		opacity: 0.5;
+	}
+
+	#opaque {
 		opacity: 1.0;
 	}
 

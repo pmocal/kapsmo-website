@@ -8,7 +8,7 @@
         >
       </div>
     </div>
-    <div id="frame">
+    <div id="frame" v-if="!closedTheater">
       <img
         :src="this.theatrical"
       >
@@ -24,10 +24,12 @@
         theatrical: ""
       }
     },
+    props: [ 'closedTheater' ],
     methods: {
       highlight() {
         event.target.id = "theater";
         this.theatrical = event.target.src;
+        this.closedTheater = false;
         let eventIterator = event.target.parentNode;
         while (eventIterator.previousElementSibling != null) {
           eventIterator.previousElementSibling.getElementsByTagName('img')[0].id = "";

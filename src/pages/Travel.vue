@@ -4,18 +4,17 @@
 			<img src="/assets/travelbanner.png">
 		</template>
 		<template v-slot:main>
-			<p class="headline">Travel</p>
+			<div v-bind:class="{ hidden: isHidden }" class="frame">
+				<b>Click one of the locations below to see some of my photos.</b>
+			</div>
 			<div class="frame">
 				<div class="locations" v-for="location in locations" :key="location"  v-on:click="isHidden = true">
 					<div>
-						<router-link v-bind:to="'/travel/' + location">
+						<router-link v-bind:to="{ name: 'travelLocation', params: { id: location, closedTheater: true }}">
 							{{location.charAt(0).toUpperCase() + location.slice(1)}}
 						</router-link>
 					</div>
 				</div>
-			</div>
-			<div v-bind:class="{ hidden: isHidden }" class="frame">
-				<p>Click one of the locations above to see some of my photos.</p>
 			</div>
 			<router-view></router-view>
 		</template>

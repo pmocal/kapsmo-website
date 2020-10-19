@@ -1,15 +1,21 @@
 <template>
 	<div class="app">
-		<div class="row1 col123456 nav">
-			<router-link to="/" class="row1 col1"><h1>KALPANA MOHAN</h1></router-link>
-			<p class="row1 col2 tagline">writer.</p>
-			<router-link v-on:mouseover="active = !active" to="/books" class="row1 col3 work">BOOKS</router-link>
-			<router-link to="/work" class="row1 col4">WORK</router-link>
-			<router-link to="/travel" class="row1 col5">TRAVEL</router-link>
-			<router-link to="/about" class="row1 col6">ABOUT</router-link>
+		<div class="row1 col12345 nav">
+			<div class="row1 col1 titlebox">
+				<router-link to="/"><h1>KALPANA MOHAN</h1></router-link>
+				<p class="tagline">writer</p>
+			</div>
+			<router-link v-on:mouseover="active = !active" to="/books" class="row1 col2 work">BOOKS</router-link>
+			<router-link to="/work" class="row1 col3">WORK</router-link>
+			<router-link to="/travel" class="row1 col4">TRAVEL</router-link>
+			<router-link to="/about" class="row1 col5">ABOUT</router-link>
+			<hr>
+			<hr>
+			<hr>
+			<hr>
+			<hr>
 		</div>
-		<hr>
-		<router-view class="row2 col123456"></router-view>
+		<router-view class="row2 col12345"></router-view>
 	</div>
 </template>
 
@@ -23,6 +29,9 @@
 </script>
 
 <style scoped>
+	.titlebox, .tagline {
+		text-align: center;	
+	}
 	.app {
 		font-family: 'Avenir', Helvetica, Arial, sans-serif;
 		-webkit-font-smoothing: antialiased;
@@ -30,7 +39,7 @@
 		color: #2c3e50;
 		
 		display: grid;
-		grid-template-columns: 25% 15% 15% 15% 15% 15%;
+		grid-template-columns: 24% 19% 19% 19% 19%;
 		grid-template-rows: 20% minmax(80%, auto);
 		align-items: center;
 		text-align: center;
@@ -42,8 +51,9 @@
 
 	.nav {
 		display: grid;
-		grid-template-columns: 25% 15% 15% 15% 15% 15%;
+		grid-template-columns: 24% 19% 19% 19% 19%;
 		margin: 0 9%;
+		align-items: center;
 	}
 
 	.nav .col1 {

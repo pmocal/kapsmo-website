@@ -1,13 +1,12 @@
 <template>
 	<div class="container">
-		<header class="row1 col123456 photocontainer">
+		<header class="row1 col12345 photocontainer">
 			<slot name="title"></slot>
 		</header>
-		<main class="row23 col123456">
+		<main class="row23 col12345">
 			<slot name="main"></slot>
 		</main>
-		<footer class="row4 col2345">
-			<p>website<br>by<br><a href="https://pmocal.github.io">pmocal</a></p>
+		<footer class="row4 col234">
 			<a class="logo" href="https://twitter.com/kalpanamo" target="_blank"><img src="assets/socialmedia/twitter.svg"></a>
 			<a class="logo" href="https://www.instagram.com/kapsmo/" target="_blank"><img src="assets/socialmedia/instagram.svg"></a>
 			<a class="logo" href="https://www.facebook.com/kalpana.mohan" target="_blank"><img src="assets/socialmedia/facebook.svg"></a>
@@ -39,7 +38,7 @@
 	.container {
 		display: grid;
 		grid-template-rows: 35% minmax(40%, auto);
-		grid-template-columns: 18% 16% 16% 16% 16% 18%;
+		grid-template-columns: 20% 20% 20% 20% 20%;
 		height: 100%;
 	}
 
@@ -52,8 +51,8 @@
 	footer {
 		width: auto;
 		text-align: left;
-		margin-top: 9%;
-		margin-bottom: 9%;
+		margin-top: 4%;
+		margin-bottom: 4%;
 		display: flex;
 		justify-content: space-around;
 	}

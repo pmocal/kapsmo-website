@@ -1,7 +1,6 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<p class="headline">Work</p>
 		</template>
 		<template v-slot:main>
 			<ol v-if="dataReady">
