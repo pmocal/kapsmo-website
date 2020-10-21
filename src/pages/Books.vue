@@ -9,7 +9,6 @@
 					v-for="work in works"
 					:key="work[0]"
 					:work="work[0]"
-					:class="{ translucent: view }"
 					@click="detail"
 				>
 					<p>{{ work[1] }}</p>
@@ -45,7 +44,14 @@
 		methods: {
 			detail(event) {
 				this.view = event.currentTarget.getAttribute('work');
-				event.currentTarget.setAttribute('id', 'opaque');
+				event.currentTarget.setAttribute('class', '');
+				event.currentTarget.setAttribute('id', 'opaque')
+				for (let i = 0; i < event.currentTarget.parentElement.childNodes.length; i++) {
+					if (event.currentTarget.parentElement.childNodes[i].getAttribute('work') != this.view) {
+						event.currentTarget.parentElement.childNodes[i].setAttribute('class', 'translucent');
+						event.currentTarget.parentElement.childNodes[i].setAttribute('id', '');
+					}
+				}
 			}
 		}
 	}

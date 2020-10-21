@@ -9,9 +9,9 @@
 					:key="post._id"
 				>
 					<h1>{{ post.title }}</h1>
-					<p class="postBody">{{ post.text }}</p>
+					<p class="postBody" v-html="post.text"></p>
 					<div class="postFooter">
-						<p>{{ new Date(post.timestamp).getMonth() }}/{{ new Date(post.timestamp).getDate() }}/{{ new Date(post.timestamp).getFullYear() }}</p>
+						<p>{{ new Date(post.timestamp).getMonth() + 1 }}/{{ new Date(post.timestamp).getDate() + 1 }}/{{ new Date(post.timestamp).getFullYear() }}</p>
 						<a :href="post.link">Link</a>
 					</div>
 					<hr>

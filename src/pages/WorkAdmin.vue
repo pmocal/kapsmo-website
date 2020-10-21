@@ -60,7 +60,7 @@
 							</li>
 						</ul>
 					</p>
-					<input
+					Title: <input
 						type="text"
 						id="title"
 						name="title"
@@ -83,11 +83,17 @@
 								bullist numlist outdent indent | removeformat | help'
 						}"
 					/>
-					<input
+					Link: <input
 						type="text"
 						id="link"
 						name="link"
 						v-model="link"
+					>
+					Timestamp: <input
+						type="date"
+						id="timestamp"
+						name="timestamp"
+						v-model="timestamp"
 					>
 					<input
 						type="submit"
@@ -101,11 +107,12 @@
 						:key="post._id"
 					>
 						<h1>{{ post.title }}</h1>
-						<p class="postBody">{{ post.text }}</p>
+						<p class="postBody" v-html="post.text"></p>
 						<div class="postFooter">
-							<p>{{ new Date(post.timestamp).getMonth() }}/{{ new Date(post.timestamp).getDate() }}/{{ new Date(post.timestamp).getFullYear() }}</p>
+							<p>{{ new Date(post.timestamp).getMonth() + 1 }}/{{ new Date(post.timestamp).getDate() + 1 }}/{{ new Date(post.timestamp).getFullYear() }}</p>
 							<a :href="post.link">Link</a>
 						</div>
+						<button @click="deletePost(post._id)">Delete post</button>
 						<hr>
 					</li>
 				</ol>
@@ -134,7 +141,6 @@
 				if (!this.password) {
 					this.errors.push("Password required");
 				}
-
 				if (!this.errors.length) {
 
 					let response = await fetch(this.site + "/auth/login",
@@ -171,6 +177,7 @@
 					this.errors.push("Text required")
 				}
 				if (!this.errors.length) {
+					this.dataReady = false;
 					let response = await fetch(this.site + "/posts/create",
 						{
 							method: 'POST',
@@ -186,14 +193,42 @@
 								{
 									'title': this.title,
 									'text': this.text,
-									'link': this.link
+									'link': this.link,
+									'timestamp': this.timestamp || Date.now()
 								}
 							)
 						}
 					);
 					var responseJson = await response.json();
 					console.log(responseJson);
+					this.loadPosts();
 				}
+			},
+			loadPosts: async function() {
+				let response = await fetch(this.site + "/posts");
+				this.posts = await response.json();
+				if (this.posts != null) {
+					this.posts.sort(function(a,b){
+						return a.timestamp.localeCompare(b.timestamp);
+					}).reverse()
+				}
+				this.dataReady = true;
+			},
+			deletePost: async function(id) {
+				this.dataReady = false;
+				let response = await fetch(this.site + "/posts/" + id,
+					{
+						method: 'DELETE',
+						mode: 'cors',
+						cache: 'no-cache',
+						credentials: 'include',
+						redirect: 'follow',
+						referrerPolicy: 'no-referrer'
+					}
+				);
+				var responseJson = await response.json();
+				console.log(responseJson);
+				this.loadPosts();
 			}
 		},
 		data () {
@@ -205,21 +240,15 @@
 				password: null,
 				showAdmin: false,
 				title: null,
-				content: null,
+				text: null,
+				timestamp: null,
 				link: null,
 				site: "http://localhost:3000"
 				// site: "https://salty-temple-72490.herokuapp.com"
 			}
 		},
 		async created() {
-			let response = await fetch(this.site + "/posts");
-			this.posts = await response.json();
-			if (this.posts != null) {
-				this.posts.sort(function(a,b){
-					return a.timestamp.localeCompare(b.timestamp);
-				}).reverse()
-			}
-			this.dataReady = true;
+			this.loadPosts();
 		}
 	}
 </script>

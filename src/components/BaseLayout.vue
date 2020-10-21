@@ -41,6 +41,9 @@
 		grid-template-columns: 20% 20% 20% 20% 20%;
 		height: 100%;
 	}
+	.photocontainer {
+		margin: 0 8%;
+	}
 
 	.photocontainer img {
 		object-fit: cover;
