@@ -12,6 +12,7 @@
 					<a :href="post[0].link">Link</a>
 				</div>
 			</div>
+			
 		</template>
 	</base-layout>
 </template>
