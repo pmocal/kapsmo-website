@@ -1,5 +1,8 @@
 <template>
 	<base-layout>
+		<template v-slot:title>
+			<img src="/assets/workbanner.jpeg">
+		</template>
 		<template v-slot:main>
 			<div class="about">
 				<div>
@@ -30,10 +33,6 @@
 </script>
 
 <style scoped>
-	.container {
-		grid-template-rows: auto auto;
-	}
-
 	.about {
 		display: flex;
 		justify-content: space-around;

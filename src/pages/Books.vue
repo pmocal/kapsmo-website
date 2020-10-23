@@ -78,7 +78,7 @@
 	}
 
 	li * {
-		padding: 1%;
+		padding: 2%;
 	}
 
 	li:hover {

@@ -2,8 +2,8 @@
 	<base-layout>
 		<template v-slot:main>
 			<p class="headline">Admin</p>
-			<div v-if="!showAdmin">
-				<p>Login</p>
+			<div v-if="!showAdmin" class="center">
+				<p class="bold">Login</p>
 				<form
 					@submit.prevent
 				>
@@ -18,9 +18,9 @@
 							</li>
 						</ul>
 					</p>
-					
+					<br>
 					<p>
-						<label for="username">Username</label><br>
+						<label for="username">Username</label>
 						<input
 							type="text"
 							id="username"
@@ -28,9 +28,8 @@
 							v-model="username"
 						>
 					</p>
-
 					<p>
-						<label for="password">Password</label><br>
+						<label for="password">Password</label>
 						<input
 							type="text"
 							id="password"
@@ -38,6 +37,7 @@
 							v-model="password"
 						>
 					</p>
+					<br>
 					<input
 						type="submit"
 						value="Submit"
@@ -83,17 +83,17 @@
 								bullist numlist outdent indent | removeformat | help'
 						}"
 					/>
-					Link: <input
-						type="text"
-						id="link"
-						name="link"
-						v-model="link"
-					>
 					Timestamp: <input
 						type="date"
 						id="timestamp"
 						name="timestamp"
 						v-model="timestamp"
+					>
+					Link: <input
+						type="text"
+						id="link"
+						name="link"
+						v-model="link"
 					>
 					<input
 						type="submit"
@@ -254,8 +254,24 @@
 </script>
 
 <style scoped>
+	form * {
+		margin: 1%;
+	}
+
+	.bold {
+		font-weight: bold;
+	}
+
 	.container {
 		grid-template-rows: auto auto;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.block {
+		display: block;
 	}
 
 	.headline {

@@ -1,6 +1,7 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
+			<img src="/assets/rome.png">
 		</template>
 		<template v-slot:main>
 			<ol v-if="dataReady">
@@ -8,7 +9,7 @@
 					v-for="post in posts"
 					:key="post._id"
 				>
-					<h1>{{ post.title }}</h1>
+					<h1><a :href="'/work/' + post._id">{{ post.title }}</a></h1>
 					<p class="postBody" v-html="post.text"></p>
 					<div class="postFooter">
 						<p>{{ new Date(post.timestamp).getMonth() + 1 }}/{{ new Date(post.timestamp).getDate() + 1 }}/{{ new Date(post.timestamp).getFullYear() }}</p>
@@ -49,10 +50,6 @@
 </script>
 
 <style scoped>
-	.container {
-		grid-template-rows: auto auto;
-	}
-
 	.headline {
 		font-style: normal;
 		font-weight: bold;

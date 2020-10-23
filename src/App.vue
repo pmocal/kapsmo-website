@@ -40,7 +40,7 @@
 		
 		display: grid;
 		grid-template-columns: 24% 19% 19% 19% 19%;
-		grid-template-rows: 20% minmax(80%, auto);
+		grid-template-rows: 17% minmax(83%, auto);
 		align-items: center;
 		text-align: center;
 		height: 100%;

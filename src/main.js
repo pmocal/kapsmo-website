@@ -11,7 +11,7 @@ import Home from './pages/Home.vue'
 import TravelLocation from './pages/TravelLocation.vue'
 import Work from './pages/Work.vue'
 import About from './pages/About.vue'
-import Article from './pages/Article.vue'
+import WorkArticle from './pages/WorkArticle.vue'
 import Books from './pages/Books.vue'
 import WorkAdmin from './pages/WorkAdmin.vue'
 
@@ -28,10 +28,10 @@ const routes = [
 	},
 	{ path: '/work', component: Work },
 	{ path: '/work/admin', component: WorkAdmin },
+	{ path: '/work/:id', component: WorkArticle },
 	{ path: '/', component: Home },
 	{ path: '/books', component: Books },
-	{ path: '/about', component: About },
-	{ path: '/article/:id', component: Article }
+	{ path: '/about', component: About }
 ]
 
 const router = new VueRouter({
