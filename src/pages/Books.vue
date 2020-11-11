@@ -1,7 +1,7 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<img src="/assets/workbanner.jpeg">
+			<img v-if="dataReady" :src="'data:image/png;base64,' + booksBanner">
 		</template>
 		<template v-slot:main>
 			<ul>
@@ -38,7 +38,10 @@
 		data: function() {	
 			return {
 				works: [["daddykins", "Daddykins: A Memoir of My Father and I"], ["anenglishmadeinindia", "An English Made in India: How a Foreign Language Became Local"]],
-				view: ""
+				view: "",
+				dataReady: null,
+				site: "http://localhost:3000"
+				// site: "https://salty-temple-72490.herokuapp.com"
 			}
 		},
 		methods: {
@@ -53,6 +56,12 @@
 					}
 				}
 			}
+		},
+		async created() {
+			let response = await fetch(this.site + "/photos/location/books");
+			this.booksBanner = await response.json();
+			this.booksBanner = Buffer.from(this.booksBanner[0].img.data).toString('base64');
+			this.dataReady = true;
 		}
 	}
 </script>

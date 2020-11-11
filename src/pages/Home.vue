@@ -1,7 +1,7 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<img src="/assets/homebanner.jpeg">
+			<img v-if="dataReady" :src="'data:image/png;base64,' + homeBanner">
 		</template>
 		<template v-slot:main>
 			<p class="headline">So Much To Say</p>
@@ -26,6 +26,19 @@
 		name: 'Home',
 		components: {
 			BaseLayout
+		},
+		data: function() {
+			return {
+				dataReady: null,
+				site: "http://localhost:3000"
+				// site: "https://salty-temple-72490.herokuapp.com"
+			}
+		},
+		async created() {
+			let response = await fetch(this.site + "/photos/location/home");
+			this.homeBanner = await response.json();
+			this.homeBanner = Buffer.from(this.homeBanner[0].img.data).toString('base64');
+			this.dataReady = true;
 		}
 	}
 </script>

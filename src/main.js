@@ -13,7 +13,7 @@ import Work from './pages/Work.vue'
 import About from './pages/About.vue'
 import WorkArticle from './pages/WorkArticle.vue'
 import Books from './pages/Books.vue'
-import WorkAdmin from './pages/WorkAdmin.vue'
+import Admin from './pages/Admin.vue'
 
 const routes = [
 	{ path: '/travel', component: Travel,
@@ -27,7 +27,7 @@ const routes = [
 		]
 	},
 	{ path: '/work', component: Work },
-	{ path: '/work/admin', component: WorkAdmin },
+	{ path: '/admin', component: Admin },
 	{ path: '/work/:id', component: WorkArticle },
 	{ path: '/', component: Home },
 	{ path: '/books', component: Books },

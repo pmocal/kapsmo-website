@@ -49,6 +49,17 @@
 				<form
 					@submit.prevent
 				>
+					Location: <input type="text" name="location" v-model="location" id="location">
+					Photo: <input type="file" id="img" name="img">
+					<input
+						type="submit"
+						value="Submit"
+						@click="submitPhoto()"
+					>
+				</form>
+				<form
+					@submit.prevent
+				>
 					<p v-if="errors.length">
 						<b>Please correct the following error(s):</b>
 						<ul>
@@ -126,7 +137,7 @@
 	import Editor from '@tinymce/tinymce-vue'
 
 	export default {
-		name: 'Work',
+		name: 'Admin',
 		components: {
 			BaseLayout,
 			'editor': Editor
@@ -199,10 +210,31 @@
 							)
 						}
 					);
-					var responseJson = await response.json();
+					let responseJson = await response.json();
 					console.log(responseJson);
 					this.loadPosts();
 				}
+			},
+			submitPhoto: async function() {
+				const formData = new FormData();
+				const fileField = document.querySelector('input[type="file"]');
+				formData.append('location', this.location);
+				formData.append('img', fileField.files[0]);
+				console.log(this.location);
+				console.log(fileField.files[0]);
+				let response = await fetch(this.site + "/photos/create",
+					{
+						method: 'POST',
+						mode: 'cors',
+						// cache: 'no-cache',
+						credentials: 'include',
+						// redirect: 'follow',
+						// referrerPolicy: 'no-referrer',
+						body: formData
+					}
+				);
+				let responseJson = await response.json();
+				console.log(responseJson);
 			},
 			loadPosts: async function() {
 				let response = await fetch(this.site + "/posts");
@@ -234,6 +266,7 @@
 		data () {
 			return {
 				posts: null,
+				location: null,
 				dataReady: false,
 				errors: [],
 				username: null,
@@ -243,8 +276,8 @@
 				text: null,
 				timestamp: null,
 				link: null,
-				// site: "http://localhost:3000"
-				site: "https://salty-temple-72490.herokuapp.com"
+				site: "http://localhost:3000"
+				// site: "https://salty-temple-72490.herokuapp.com"
 			}
 		},
 		async created() {
@@ -278,6 +311,7 @@
 		font-style: normal;
 		font-weight: bold;
 		text-decoration: underline;
+		padding: 2%;
 	}
 
 	.postBody {

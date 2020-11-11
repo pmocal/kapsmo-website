@@ -1,8 +1,5 @@
 <template>
 	<base-layout>
-		<template v-slot:title>
-			<img src="/assets/workbanner.jpeg">
-		</template>
 		<template v-slot:main>
 			<div class="about">
 				<div>
@@ -33,6 +30,10 @@
 </script>
 
 <style scoped>
+	.container {
+		grid-template-rows: 0 minmax(40%, auto);
+	}
+
 	.about {
 		display: flex;
 		justify-content: space-around;
@@ -54,7 +55,7 @@
 	}
 
 	p {
-		padding-bottom: 3%;
+		padding-bottom: 2.5%;
 	}
 
 	ul {

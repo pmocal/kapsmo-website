@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="frame">
-      <div v-for="url in images.urls" :key="url">
+    <div v-if="dataReady" class="frame">
+      <div v-for="(image, index) in response" :key="index">
         <img
           @click="highlight"
-          :src="url"
+          :src="'data:image/png;base64,' + getDataUrl(image)"
         >
       </div>
     </div>
@@ -21,7 +21,11 @@
     name: 'TravelLocation',
     data: function() {
       return {
-        theatrical: ""
+        theatrical: "",
+        dataReady: false,
+        response: null,
+        site: "http://localhost:3000"
+        // site: "https://salty-temple-72490.herokuapp.com"
       }
     },
     props: [ 'closedTheater' ],
@@ -40,12 +44,22 @@
           eventIterator.nextElementSibling.getElementsByTagName('img')[0].id = "";
           eventIterator = eventIterator.nextElementSibling;
         }
+      },
+      getDataUrl(obj) {
+        return Buffer.from(obj.img.data).toString('base64');
       }
     },
-    computed: {
-      images: function() {
-        return require('./../../public/assets/locations/' + this.$route.params.id)
+    watch: {
+      '$route.params.id': async function() {
+        let response = await fetch(this.site + "/photos/location/" + this.$route.params.id);
+        this.response = await response.json();
+        this.dataReady = true;
       }
+    },
+    async created() {
+      let response = await fetch(this.site + "/photos/location/" + this.$route.params.id);
+      this.response = await response.json();
+      this.dataReady = true;
     }
   }
 </script>

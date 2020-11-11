@@ -1,7 +1,7 @@
 <template>
 	<base-layout>
 		<template v-slot:title>
-			<img src="/assets/travelbanner.png">
+			<img v-if="dataReady" :src="'data:image/png;base64,' + travelBanner">
 		</template>
 		<template v-slot:main>
 			<div v-bind:class="{ hidden: isHidden }" class="frame">
@@ -32,8 +32,18 @@
 		data: function() {
 			return {
 				locations: ["chennai", "saratoga", "beijing", "rome", "palakkad", "colombo"],
-				isHidden: false
+				isHidden: false,
+				travelBanner: "",
+				dataReady: null,
+				site: "http://localhost:3000"
+				// site: "https://salty-temple-72490.herokuapp.com"
 			}
+		},
+		async created() {
+			let response = await fetch(this.site + "/photos/location/travel");
+			this.travelBanner = await response.json();
+			this.travelBanner = Buffer.from(this.travelBanner[0].img.data).toString('base64');
+			this.dataReady = true;
 		}
 	}
 

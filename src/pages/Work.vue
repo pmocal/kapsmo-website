@@ -1,7 +1,7 @@
 <template>
 	<base-layout>
-		<template v-slot:title>
-			<img src="/assets/rome.png">
+		<template v-if="dataReady" v-slot:title>
+			<img :src="'data:image/png;base64,' + workBanner">
 		</template>
 		<template v-slot:main>
 			<ol v-if="dataReady">
@@ -33,17 +33,23 @@
 		data () {
 			return {
 				posts: null,
-				dataReady: false
+				dataReady: false,
+				workBanner: "",
+				site: "http://localhost:3000"
+				// site: "https://salty-temple-72490.herokuapp.com"
 			}
 		},
 		async created() {
-			let response = await fetch("https://salty-temple-72490.herokuapp.com/posts");
+			let response = await fetch(this.site + "/posts");
 			this.posts = await response.json();
 			if (this.posts != null) {
 				this.posts.sort(function(a,b){
 					return a.timestamp.localeCompare(b.timestamp);
 				}).reverse()
 			}
+			response = await fetch(this.site + "/photos/location/work");
+			this.workBanner = await response.json();
+			this.workBanner = Buffer.from(this.workBanner[0].img.data).toString('base64');
 			this.dataReady = true;
 		}
 	}
