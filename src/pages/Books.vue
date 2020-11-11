@@ -40,8 +40,8 @@
 				works: [["daddykins", "Daddykins: A Memoir of My Father and I"], ["anenglishmadeinindia", "An English Made in India: How a Foreign Language Became Local"]],
 				view: "",
 				dataReady: null,
-				site: "http://localhost:3000"
-				// site: "https://salty-temple-72490.herokuapp.com"
+				// site: "http://localhost:3000"
+				site: "https://salty-temple-72490.herokuapp.com"
 			}
 		},
 		methods: {
