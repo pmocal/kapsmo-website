@@ -30,8 +30,8 @@
 		data: function() {
 			return {
 				dataReady: null,
-				site: "http://localhost:3000"
-				// site: "https://salty-temple-72490.herokuapp.com"
+				// site: "http://localhost:3000"
+				site: "https://salty-temple-72490.herokuapp.com"
 			}
 		},
 		async created() {
