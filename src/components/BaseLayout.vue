@@ -22,13 +22,13 @@
 
 <style scoped>
 	main {
-		margin: 2.5% 0;
+		margin: .5% 0;
 		text-align: left;
 		color: black;
 		line-height: normal;
 		font-size: 1em;
 	}
-	
+
 	@media only screen and (min-device-width: 768px){
 		main {
 			margin: .5% 9%;

@@ -51,9 +51,18 @@
 
 	.nav {
 		display: grid;
-		grid-template-columns: 24% 19% 19% 19% 19%;
-		margin: 0 9%;
+		grid-template-columns: 20% 20% 20% 20% 20%;
+		margin: 5% 0;
 		align-items: center;
+	}
+
+	@media only screen and (min-device-width: 768px){
+		.nav {
+			display: grid;
+			grid-template-columns: 24% 19% 19% 19% 19%;
+			margin: 0 9%;
+			align-items: center;
+		}
 	}
 
 	.nav .col1 {
@@ -62,7 +71,14 @@
 
 	h1 {
 		font-weight: bold;
-		font-size: 1.6em;
+		font-size: 1.3em;
+	}
+
+	@media only screen and (min-device-width: 768px){
+		h1 {
+			font-weight: bold;
+			font-size: 1.6em;
+		}
 	}
 
 	a {
