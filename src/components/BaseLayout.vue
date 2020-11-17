@@ -60,8 +60,18 @@
 		justify-content: space-around;
 	}
 
-	.logo {
-		width: 3%;
-		height: 3%;
+	@media only screen and (min-device-width: 768px){
+		.logo {
+			width: 3%;
+			height: 3%;
+		}
 	}
+
+	@media only screen and (min-device-width: 480px){
+		.logo {
+			width: 20%;
+			height: 20%;
+		}
+	}
+	
 </style>
