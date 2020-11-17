@@ -22,11 +22,21 @@
 
 <style scoped>
 	main {
-		margin: .5% 9%;
+		margin: 2.5% 0;
 		text-align: left;
 		color: black;
 		line-height: normal;
 		font-size: 1em;
+	}
+	
+	@media only screen and (min-device-width: 768px){
+		main {
+			margin: .5% 9%;
+			text-align: left;
+			color: black;
+			line-height: normal;
+			font-size: 1em;
+		}
 	}
 
 	h2 {
@@ -61,8 +71,8 @@
 	}
 
 	.logo {
-		width: 20%;
-		height: 20%;
+		width: 13%;
+		height: 13%;
 	}
 
 	@media only screen and (min-device-width: 768px){
