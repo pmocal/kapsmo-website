@@ -7,9 +7,9 @@
 			<slot name="main"></slot>
 		</main>
 		<footer class="row4 col234">
-			<a class="logo" href="https://twitter.com/kalpanamo" target="_blank"><img src="assets/socialmedia/twitter.svg"></a>
-			<a class="logo" href="https://www.instagram.com/kapsmo/" target="_blank"><img src="assets/socialmedia/instagram.svg"></a>
-			<a class="logo" href="https://www.facebook.com/kalpana.mohan" target="_blank"><img src="assets/socialmedia/facebook.svg"></a>
+			<a class="logo" href="https://twitter.com/kalpanamo" target="_blank"><img src="assets/socialmedia/twitter.svg" alt="Link to Kalpana's Twitter account"></a>
+			<a class="logo" href="https://www.instagram.com/kapsmo/" target="_blank"><img src="assets/socialmedia/instagram.svg" alt="Link to Kalpana's Instagram account"></a>
+			<a class="logo" href="https://www.facebook.com/kalpana.mohan" target="_blank"><img src="assets/socialmedia/facebook.svg" alt="Link to Kalpana's Facebook account"></a>
 		</footer>
 	</div>
 </template>
