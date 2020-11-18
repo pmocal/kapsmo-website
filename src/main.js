@@ -4,6 +4,7 @@ import App from './App.vue'
 
 Vue.config.devtools = true
 Vue.config.productionTip = false
+Vue.prototype.$hostname = (Vue.config.productionTip) ? 'https://salty-temple-72490.herokuapp.com' : 'http://localhost:3000'
 Vue.use(VueRouter);
 
 import Travel from './pages/Travel.vue'

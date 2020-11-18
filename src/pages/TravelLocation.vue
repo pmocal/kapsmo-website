@@ -23,9 +23,7 @@
       return {
         theatrical: "",
         dataReady: false,
-        response: null,
-        // site: "http://localhost:3000"
-        site: "https://salty-temple-72490.herokuapp.com"
+        response: null
       }
     },
     props: [ 'closedTheater' ],
@@ -51,13 +49,13 @@
     },
     watch: {
       '$route.params.id': async function() {
-        let response = await fetch(this.site + "/photos/location/" + this.$route.params.id);
+        let response = await fetch(this.$hostname + "/photos/location/" + this.$route.params.id);
         this.response = await response.json();
         this.dataReady = true;
       }
     },
     async created() {
-      let response = await fetch(this.site + "/photos/location/" + this.$route.params.id);
+      let response = await fetch(this.$hostname + "/photos/location/" + this.$route.params.id);
       this.response = await response.json();
       this.dataReady = true;
     }

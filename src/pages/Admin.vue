@@ -154,7 +154,7 @@
 				}
 				if (!this.errors.length) {
 
-					let response = await fetch(this.site + "/auth/login",
+					let response = await fetch(this.$hostname + "/auth/login",
 						{
 							method: 'POST',
 							mode: 'cors',
@@ -189,7 +189,7 @@
 				}
 				if (!this.errors.length) {
 					this.dataReady = false;
-					let response = await fetch(this.site + "/posts/create",
+					let response = await fetch(this.$hostname + "/posts/create",
 						{
 							method: 'POST',
 							mode: 'cors',
@@ -222,7 +222,7 @@
 				formData.append('img', fileField.files[0]);
 				console.log(this.location);
 				console.log(fileField.files[0]);
-				let response = await fetch(this.site + "/photos/create",
+				let response = await fetch(this.$hostname + "/photos/create",
 					{
 						method: 'POST',
 						mode: 'cors',
@@ -237,7 +237,7 @@
 				console.log(responseJson);
 			},
 			loadPosts: async function() {
-				let response = await fetch(this.site + "/posts");
+				let response = await fetch(this.$hostname + "/posts");
 				this.posts = await response.json();
 				if (this.posts != null) {
 					this.posts.sort(function(a,b){
@@ -248,7 +248,7 @@
 			},
 			deletePost: async function(id) {
 				this.dataReady = false;
-				let response = await fetch(this.site + "/posts/" + id,
+				let response = await fetch(this.$hostname + "/posts/" + id,
 					{
 						method: 'DELETE',
 						mode: 'cors',

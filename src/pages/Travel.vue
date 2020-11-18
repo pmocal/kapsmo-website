@@ -35,12 +35,10 @@
 				isHidden: false,
 				travelBanner: "",
 				dataReady: null,
-				// site: "http://localhost:3000"
-				site: "https://salty-temple-72490.herokuapp.com"
 			}
 		},
 		async created() {
-			let response = await fetch(this.site + "/photos/location/travel");
+			let response = await fetch(this.$hostname + "/photos/location/travel");
 			this.travelBanner = await response.json();
 			this.travelBanner = Buffer.from(this.travelBanner[0].img.data).toString('base64');
 			this.dataReady = true;
