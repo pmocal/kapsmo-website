@@ -51,7 +51,7 @@
 
 	.nav {
 		display: grid;
-		grid-template-columns: 20% 20% 20% 20% 20%;
+		grid-template-columns: 28% 18% 18% 18% 18%;
 		margin: 5% 0;
 		align-items: center;
 	}

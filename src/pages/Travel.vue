@@ -55,6 +55,14 @@
 
 	.locations a {
 		color: black;
+		font-size: 0.7em;
+	}
+
+	@media only screen and (min-device-width: 768px){
+		.locations a {
+			color: black;
+			font-size: 1em;
+		}
 	}
 
 	.locations img {
