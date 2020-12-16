@@ -1,6 +1,6 @@
 # kapsmo-website
 
-Screenshot below. Will be deployed at http://www.kalpanamohan.com/ and replace the site currently there.
+Screenshot below. http://www.kalpanamohan.com/ redirects to this site.
 
 Site is accessible and responsive.
 
