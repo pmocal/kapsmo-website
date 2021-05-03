@@ -5,7 +5,7 @@
 				<router-link to="/"><h1>KALPANA MOHAN</h1></router-link>
 				<p class="tagline">writer</p>
 			</div>
-			<router-link v-on:mouseover="active = !active" to="/books" class="row1 col2 work">BOOKS</router-link>
+			<router-link to="/books" class="row1 col2 work">BOOKS</router-link>
 			<router-link to="/work" class="row1 col3">WORK</router-link>
 			<router-link to="/travel" class="row1 col4">TRAVEL</router-link>
 			<router-link to="/about" class="row1 col5">ABOUT</router-link>
@@ -22,9 +22,6 @@
 <script>
 	export default {
 		name: 'app',
-		data() {
-			// active: false
-		}
 	}
 </script>
 

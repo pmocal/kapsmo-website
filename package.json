@@ -37,7 +37,9 @@
     "jest": "^25.5.4",
     "vue-jest": "^3.0.7",
     "vue-template-compiler": "^2.6.12",
-    "webpack-cli": "^3.3.12"
+    "webpack-bundle-tracker": "^1.0.0-alpha.1",
+    "webpack-cli": "^3.3.12",
+    "write-file-webpack-plugin": "^4.5.1"
   },
   "eslintConfig": {
     "root": true,

@@ -54,6 +54,10 @@
 </script>
 
 <style scoped>
+	a {
+		color: maroon;
+	}
+
 	.headline {
 		font-style: normal;
 		font-weight: bold;

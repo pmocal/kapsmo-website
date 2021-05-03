@@ -1,10 +1,11 @@
 <template>
   <div>
     <div v-if="dataReady" class="frame">
-      <div v-for="(image, index) in response" :key="index">
+      <div v-for="(image, index) in this.travelLocationPhotos" :key="index">
         <img
           @click="highlight"
-          :src="'data:image/png;base64,' + getDataUrl(image)"
+          v-if="dataReady" 
+          :src="'data:image/png;base64,' + image"
         >
       </div>
     </div>
@@ -23,7 +24,8 @@
       return {
         theatrical: "",
         dataReady: false,
-        response: null
+        response: null,
+        travelLocationPhotos: []
       }
     },
     props: [ 'closedTheater' ],
@@ -43,21 +45,22 @@
           eventIterator = eventIterator.nextElementSibling;
         }
       },
-      getDataUrl(obj) {
-        return Buffer.from(obj.img.data).toString('base64');
+      async getContent() {
+        let response = await fetch(this.$hostname + "/photos/location/" + this.$route.params.id).then(response => (this.response = response.json()));
+        this.travelLocationPhotos = [];
+        for (let i = 0; i < response.length; i += 1) {
+          this.travelLocationPhotos.push(Buffer.from(response[i].img.data).toString('base64'));
+        }
+        this.dataReady = true;
       }
     },
     watch: {
       '$route.params.id': async function() {
-        let response = await fetch(this.$hostname + "/photos/location/" + this.$route.params.id);
-        this.response = await response.json();
-        this.dataReady = true;
+        await this.getContent();
       }
     },
-    async created() {
-      let response = await fetch(this.$hostname + "/photos/location/" + this.$route.params.id);
-      this.response = await response.json();
-      this.dataReady = true;
+    async mounted() {
+      await this.getContent();
     }
   }
 </script>
