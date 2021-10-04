@@ -164,7 +164,6 @@
 								'Content-Type': 'application/json'
 							},
 							redirect: 'follow',
-							referrerPolicy: 'no-referrer',
 							body: JSON.stringify(
 								{
 									'username': this.username,

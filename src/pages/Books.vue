@@ -56,7 +56,7 @@
 			}
 		},
 		async created() {
-			let response = await fetch(this.$hostname + "/photos/location/books");
+			let response = await fetch(this.$hostname + "/photos/location/books", {mode: 'cors'});
 			this.booksBanner = await response.json();
 			this.booksBanner = Buffer.from(this.booksBanner[0].img.data).toString('base64');
 			this.dataReady = true;
