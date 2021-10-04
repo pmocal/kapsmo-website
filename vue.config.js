@@ -5,6 +5,6 @@ module.exports = {
 	publicPath: "/",
 	runtimeCompiler: true,
 	devServer: {
-		proxy: 'https://kapsmo-website.herokuapp.com/'
+		proxy: 'http://localhost:3000/'
 	}
 }
