@@ -33,7 +33,7 @@
 			}
 		},
 		async created() {
-			let response = await fetch(this.$hostname + "/photos/location/home", { method: "GET", mode: 'cors'});
+			let response = await fetch(this.$hostname + "/photos/location/home", { method: "GET", mode: 'cors', cache: 'no-cache'});
 			this.homeBanner = await response.json();
 			this.homeBanner = Buffer.from(this.homeBanner[0].img.data).toString('base64');
 			this.dataReady = true;
