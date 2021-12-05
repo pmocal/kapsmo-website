@@ -65,7 +65,7 @@
 		width: auto;
 		text-align: left;
 		margin-top: 4%;
-		margin-bottom: 4%;
+		padding-bottom: 4%;
 		display: flex;
 		justify-content: space-around;
 	}

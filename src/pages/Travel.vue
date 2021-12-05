@@ -31,7 +31,7 @@
 		},
 		data: function() {
 			return {
-				locations: ["chennai", "saratoga", "beijing", "rome", "palakkad", "colombo"],
+				locations: ["chennai", "saratoga", "beijing", "rome", "palakkad", "colombo", "paris"],
 				isHidden: false,
 				travelBanner: "",
 				dataReady: null,

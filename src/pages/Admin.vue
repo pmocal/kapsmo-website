@@ -164,7 +164,6 @@
 								'Content-Type': 'application/json'
 							},
 							redirect: 'follow',
-							referrerPolicy: 'no-referrer',
 							body: JSON.stringify(
 								{
 									'username': this.username,
@@ -189,7 +188,7 @@
 				}
 				if (!this.errors.length) {
 					this.dataReady = false;
-					let response = await fetch(this.$hostname + "/posts/create",
+					await fetch(this.$hostname + "/posts/create",
 						{
 							method: 'POST',
 							mode: 'cors',
@@ -210,31 +209,23 @@
 							)
 						}
 					);
-					let responseJson = await response.json();
-					console.log(responseJson);
 					this.loadPosts();
 				}
 			},
 			submitPhoto: async function() {
 				const formData = new FormData();
-				const fileField = document.querySelector('input[type="file"]');
+				const fileField = document.getElementById("img");
 				formData.append('location', this.location);
 				formData.append('img', fileField.files[0]);
-				console.log(this.location);
-				console.log(fileField.files[0]);
-				let response = await fetch(this.$hostname + "/photos/create",
+				// save `fileField.files[0])` to server
+				await fetch(this.$hostname + "/photos/create",
 					{
 						method: 'POST',
 						mode: 'cors',
-						// cache: 'no-cache',
 						credentials: 'include',
-						// redirect: 'follow',
-						// referrerPolicy: 'no-referrer',
 						body: formData
 					}
 				);
-				let responseJson = await response.json();
-				console.log(responseJson);
 			},
 			loadPosts: async function() {
 				let response = await fetch(this.$hostname + "/posts");
@@ -248,7 +239,7 @@
 			},
 			deletePost: async function(id) {
 				this.dataReady = false;
-				let response = await fetch(this.$hostname + "/posts/" + id,
+				await fetch(this.$hostname + "/posts/" + id,
 					{
 						method: 'DELETE',
 						mode: 'cors',
@@ -258,8 +249,6 @@
 						referrerPolicy: 'no-referrer'
 					}
 				);
-				var responseJson = await response.json();
-				console.log(responseJson);
 				this.loadPosts();
 			}
 		},
