@@ -46,7 +46,7 @@
         }
       },
       async getContent() {
-        let response = await fetch(this.$hostname + "/photos/location/" + this.$route.params.id).then(response => (this.response = response.json()));
+        let response = await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/photos/location/" + this.$route.params.id).then(response => (this.response = response.json()));
         this.travelLocationPhotos = [];
         for (let i = 0; i < response.length; i += 1) {
           this.travelLocationPhotos.push(Buffer.from(response[i].img.data).toString('base64'));

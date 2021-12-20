@@ -38,14 +38,14 @@
 			}
 		},
 		async created() {
-			let response = await fetch(this.$hostname + "/posts");
+			let response = await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/posts");
 			this.posts = await response.json();
 			if (this.posts != null) {
 				this.posts.sort(function(a,b){
 					return a.timestamp.localeCompare(b.timestamp);
 				}).reverse()
 			}
-			response = await fetch(this.$hostname + "/photos/location/work");
+			response = await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/photos/location/work");
 			this.workBanner = await response.json();
 			this.workBanner = Buffer.from(this.workBanner[0].img.data).toString('base64');
 			this.dataReady = true;

@@ -32,7 +32,7 @@
 			}
 		},
 		async created() {
-			let response = await fetch(this.$hostname + "/posts/" + this.$route.params.id);
+			let response = await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/posts/" + this.$route.params.id);
 			this.post = await response.json();
 			this.dataReady = true;
 		}
