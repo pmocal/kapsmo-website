@@ -34,7 +34,6 @@
 		},
 		async created() {
 			let response = await fetch(this.$hostname + "/photos/location/home");
-			response.headers.forEach(console.log);
 			this.homeBanner = await response.json();
 			this.homeBanner = Buffer.from(this.homeBanner[0].img.data).toString('base64');
 			this.dataReady = true;
