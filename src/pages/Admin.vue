@@ -154,7 +154,7 @@
 				}
 				if (!this.errors.length) {
 
-					let response = await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/auth/login",
+					let response = await fetch(this.$hostname + "/auth/login",
 						{
 							method: 'POST',
 							mode: 'cors',
@@ -188,7 +188,7 @@
 				}
 				if (!this.errors.length) {
 					this.dataReady = false;
-					await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/posts/create",
+					await fetch(this.$hostname + "/posts/create",
 						{
 							method: 'POST',
 							mode: 'cors',
@@ -218,7 +218,7 @@
 				formData.append('location', this.location);
 				formData.append('img', fileField.files[0]);
 				// save `fileField.files[0])` to server
-				await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/photos/create",
+				await fetch(this.$hostname + "/photos/create",
 					{
 						method: 'POST',
 						mode: 'cors',
@@ -228,7 +228,7 @@
 				);
 			},
 			loadPosts: async function() {
-				let response = await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/posts");
+				let response = await fetch(this.$hostname + "/posts");
 				this.posts = await response.json();
 				if (this.posts != null) {
 					this.posts.sort(function(a,b){
@@ -239,7 +239,7 @@
 			},
 			deletePost: async function(id) {
 				this.dataReady = false;
-				await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/posts/" + id,
+				await fetch(this.$hostname + "/posts/" + id,
 					{
 						method: 'DELETE',
 						mode: 'cors',

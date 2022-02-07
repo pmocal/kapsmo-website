@@ -38,7 +38,7 @@
 			}
 		},
 		async created() {
-			let response = await fetch("https://cors-anywhen.herokuapp.com/" + this.$hostname + "/photos/location/travel");
+			let response = await fetch(this.$hostname + "/photos/location/travel");
 			this.travelBanner = await response.json();
 			this.travelBanner = Buffer.from(this.travelBanner[0].img.data).toString('base64');
 			this.dataReady = true;
