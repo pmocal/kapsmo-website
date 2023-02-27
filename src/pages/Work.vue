@@ -4,20 +4,14 @@
 			<img :src="'data:image/png;base64,' + workBanner">
 		</template>
 		<template v-slot:main>
-			<ol v-if="dataReady">
-				<li
-					v-for="post in posts"
-					:key="post._id"
-				>
-					<h1><a :href="'/work/' + post._id">{{ post.title }}</a></h1>
-					<p class="postBody" v-html="post.text"></p>
-					<div class="postFooter">
-						<p>{{ new Date(post.timestamp).getMonth() + 1 }}/{{ new Date(post.timestamp).getDate() + 1 }}/{{ new Date(post.timestamp).getFullYear() }}</p>
-						<a :href="post.link">Link</a>
-					</div>
-					<hr>
+			<ul>
+				<li>
+					<p>To follow my weekly writings on books in translation read <a href="https://kalpanamohan.substack.com/">LETTERS FROM EVERYWHERE</a>.</p>
 				</li>
-			</ol>
+				<li>
+					<p>To read weekly posts about a life in progress read <a href="https://kalsomuchtosay.substack.com/">SO MUCH TO SAY</a>.</p>
+				</li>
+			</ul>
 		</template>
 	</base-layout>
 </template>
@@ -54,25 +48,34 @@
 </script>
 
 <style scoped>
-	a {
-		color: maroon;
-	}
+	@media only screen and (max-width: 1799px) {
+		ul {
+			display: flex;
+			flex-direction: column;
+		}
 
-	.headline {
-		font-style: normal;
-		font-weight: bold;
-		text-decoration: underline;
+		li {
+			padding: 1%;
+			height: 45%;
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+		}
 	}
+	
+	@media only screen and (min-width: 1800px) {
+		ul {
+			display: flex;
+			justify-content: space-around;
+		}
 
-	.postBody {
-		margin-left: 5%;
-		margin-top: 2%;
-		white-space: pre-line;
-	}
-
-	.postFooter {
-		display: flex;
-		justify-content: space-between;
-		margin: 3%;
+		li {
+			padding: 1%;
+			height: 100%;
+			width: 45%;
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 </style>
