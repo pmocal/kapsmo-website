@@ -2,6 +2,4 @@
 
 Screenshot below. http://www.kalpanamohan.com/ redirects to this site.
 
-Site is accessible and responsive.
-
 ![screenshot of current progress](screenshot.png)
