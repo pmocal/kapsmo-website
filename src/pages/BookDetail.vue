@@ -123,8 +123,21 @@ p {
 	height: 50px;
 }
 
+@media (orientation: portrait) {
+	.goodreads {
+		display: none;
+	}
+}
+
 .publisher {
 	height: 40px;
 	padding-right: 7%;
 }
+
+@media (orientation: portrait) {
+	.publisher {
+		display: none;
+	}
+}
+
 </style>
