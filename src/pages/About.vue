@@ -11,7 +11,7 @@
 					<p>She lives in Saratoga, California.</p>
 				</div>
 				<div>
-					<img src="assets/aboutpicture.jpg">
+					<img src="assets/aboutpicture.jpg" v-if="!isMobile()">
 				</div>
 			</div>
 		</template>
@@ -25,6 +25,15 @@
 		name: 'About',
 		components: {
 			BaseLayout
+		},
+		methods: {
+			isMobile() {
+				if (screen.width <= 760) {
+					return true;
+				} else {
+					return false;
+				}
+			}
 		}
 	}
 </script>
