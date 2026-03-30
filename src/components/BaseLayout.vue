@@ -39,6 +39,12 @@
 		}
 	}
 
+	@media (orientation: portrait) {
+		header {
+			-webkit-writing-mode: vertical-rl;
+		}
+	}
+
 	h2 {
 		font-size: 1.4em;
 		font-style: bold;
