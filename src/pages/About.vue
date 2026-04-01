@@ -10,8 +10,8 @@
 					<p>Kalpana is an award-winning columnist for India Currents Magazine. <b>Karnatik Revival</b> won a New America Media prize. <b>Creating Beta Clones</b> and <b>From a Man Village into the Jungle</b> won The San Francisco Peninsula Press Club Greater Bay Area Journalism prizes. Kalpana's writings and commentatries have appeared in NPR, Business Week Online, San Jose Mercury News, San Francisco Chronicle and Better Homes and Gardens.</p>
 					<p>She lives in Saratoga, California.</p>
 				</div>
-				<div>
-					<img src="assets/aboutpicture.jpg" v-if="!isMobile()">
+				<div v-if="!isMobile()">
+					<img src="assets/aboutpicture.jpg">
 				</div>
 			</div>
 		</template>
